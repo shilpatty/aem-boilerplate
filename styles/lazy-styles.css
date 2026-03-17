@@ -1,16 +1,16 @@
 /* add global styles that can be loaded post LCP here */
 
+/* Constrain standalone content images and add vertical spacing */
+.default-content-wrapper p > img:only-child {
+  max-width: 834px;
+  margin: 100px 0 48px;
+}
+
 /* Float inline logo/badge images within text paragraphs */
 .default-content-wrapper p > img:not(:only-child) {
   float: right;
   max-width: 280px;
   margin: 0 0 8px 16px;
-}
-
-/* Constrain standalone content images and add vertical spacing */
-.default-content-wrapper p > img:only-child {
-  max-width: 834px;
-  margin: 100px 0 48px;
 }
 
 /* Float standalone images that follow headings (e.g. SBTi logo) */
@@ -20,27 +20,60 @@
   margin: 0 0 16px 24px;
 }
 
-/* Footer bar: social icons paragraph */
-.section > .default-content-wrapper:last-child > p:last-child:has(> a > img) {
-  display: flex;
+/* DA wraps images in <picture>; mirror the above rules for picture > img */
+.default-content-wrapper p > picture:only-child img {
+  max-width: 834px;
+  margin: 100px 0 48px;
+}
+
+.default-content-wrapper p > picture:not(:only-child) {
+  float: right;
+  max-width: 280px;
+  margin: 0 0 8px 16px;
+}
+
+.default-content-wrapper h3 + p > picture:only-child {
+  float: right;
+  max-width: 270px;
+  margin: 0 0 16px 24px;
+}
+
+.default-content-wrapper h3 + p > picture:only-child img {
+  float: right;
+  max-width: 270px;
+  margin: 0 0 16px 24px;
+}
+
+/* Footer bar: social icons paragraphs */
+.section > .default-content-wrapper:last-child > p:has(> a > img),
+.section > .default-content-wrapper:last-child > p:has(> a > picture) {
+  display: inline-flex;
   gap: 12px;
   align-items: center;
   margin: 0;
 }
 
 /* Footer bar: copyright text */
-.section > .default-content-wrapper:last-child > p:first-child:has(+ p > a > img) {
+.section > .default-content-wrapper:last-child > p:first-child {
   margin: 0;
   font-size: 16px;
   color: #333;
 }
 
-.section > .default-content-wrapper:last-child > p > a > img[alt="instagram"],
-.section > .default-content-wrapper:last-child > p > a > img[alt="linkedIn"],
-.section > .default-content-wrapper:last-child > p > a > img[alt="youtube"] {
+/* Social icon images: constrain size */
+.section > .default-content-wrapper:last-child > p > a img[alt="instagram"],
+.section > .default-content-wrapper:last-child > p > a img[alt="linkedIn"],
+.section > .default-content-wrapper:last-child > p > a img[alt="youtube"] {
   width: 24px;
   height: 24px;
   object-fit: contain;
+  float: none;
+  margin: 0;
+  max-width: none;
+}
+
+/* Social icon picture wrappers: reset float/margin */
+.section > .default-content-wrapper:last-child > p > a > picture {
   float: none;
   margin: 0;
   max-width: none;
@@ -82,8 +115,9 @@
 }
 
 @media (width >= 600px) {
-  .section > .default-content-wrapper:last-child:has(> p > a > img[alt="instagram"]) {
+  .section > .default-content-wrapper:last-child:has(> p > a img[alt="instagram"]) {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     padding: 11px 0 14px;
