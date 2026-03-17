@@ -1,0 +1,39 @@
+{
+  "variantName": "hero-climate",
+  "baseBlock": "hero",
+  "version": "1.0.0",
+  "created": "2026-03-17T11:56:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://matthey.com/sustainability/climate",
+    "originPage": "sustainability topic page",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "spacious",
+    "purpose": "topic-hero",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "background image + heading",
+    "buttonCount": 0,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "sustainability topic pages",
+      "content pages with landscape hero images",
+      "pages with simple heading overlay on image"
+    ],
+    "notSuitableFor": [
+      "product pages with multiple CTAs",
+      "landing pages requiring subheading and buttons",
+      "pages without background images"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/sustainability/climate"],
+    "reuseCount": 1,
+    "lastUsed": "2026-03-17T11:56:00.000Z"
+  }
+}

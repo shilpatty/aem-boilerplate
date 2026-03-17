@@ -1,0 +1,39 @@
+{
+  "variantName": "accordion-climate",
+  "baseBlock": "accordion",
+  "version": "1.0.0",
+  "created": "2026-03-17T11:56:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://matthey.com/sustainability/climate",
+    "originPage": "sustainability topic page",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "minimal",
+    "purpose": "topic-details",
+    "imagePattern": "noimg"
+  },
+  "contentPattern": {
+    "structure": "4 expandable items with title + body text",
+    "buttonCount": 0,
+    "imageCount": 0
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "sustainability detail sections",
+      "expandable topic breakdowns",
+      "FAQ-style content with short answers"
+    ],
+    "notSuitableFor": [
+      "accordions with rich media content",
+      "dark-themed expandable sections",
+      "accordions with many items (10+)"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/sustainability/climate"],
+    "reuseCount": 1,
+    "lastUsed": "2026-03-17T11:56:00.000Z"
+  }
+}

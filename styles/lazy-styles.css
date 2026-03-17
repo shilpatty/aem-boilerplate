@@ -1,1 +1,84 @@
 /* add global styles that can be loaded post LCP here */
+
+/* Float inline logo/badge images within text paragraphs */
+.default-content-wrapper p > img:not(:only-child) {
+  float: right;
+  max-width: 280px;
+  margin: 0 0 8px 16px;
+}
+
+/* Constrain standalone content images and add vertical spacing */
+.default-content-wrapper p > img:only-child {
+  max-width: 834px;
+  margin: 100px 0 48px;
+}
+
+/* Float standalone images that follow headings (e.g. SBTi logo) */
+.default-content-wrapper h3 + p > img:only-child {
+  float: right;
+  max-width: 270px;
+  margin: 0 0 16px 24px;
+}
+
+/* Footer bar: social icons paragraph */
+.section > .default-content-wrapper:last-child > p:last-child:has(> a > img) {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin: 0;
+}
+
+/* Footer bar: copyright text */
+.section > .default-content-wrapper:last-child > p:first-child:has(+ p > a > img) {
+  margin: 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.section > .default-content-wrapper:last-child > p > a > img[alt="instagram"],
+.section > .default-content-wrapper:last-child > p > a > img[alt="linkedIn"],
+.section > .default-content-wrapper:last-child > p > a > img[alt="youtube"] {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  float: none;
+  margin: 0;
+  max-width: none;
+}
+
+/* "Go back" subtitle spacing */
+.default-content-wrapper h2 + h6 {
+  font-weight: 400;
+  margin: 8px 0 20px;
+}
+
+/* CTA button: "Explore" link after h6 subtitle */
+.default-content-wrapper h6 + p > a:only-child {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: rgb(30 34 170);
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: 400;
+  padding: 20px 24px;
+  text-decoration: none;
+  max-width: 380px;
+  width: 100%;
+  justify-content: center;
+}
+
+.default-content-wrapper h6 + p > a:only-child::after {
+  content: "\2192";
+}
+
+@media (width >= 600px) {
+  .section > .default-content-wrapper:last-child:has(> p > a > img[alt="instagram"]) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 11px 0 14px;
+    border-top: 1px solid #ddd;
+  }
+}

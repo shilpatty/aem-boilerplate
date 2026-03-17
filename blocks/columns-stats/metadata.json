@@ -1,0 +1,39 @@
+{
+  "variantName": "columns-stats",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2026-03-17T11:56:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://matthey.com/sustainability/climate",
+    "originPage": "sustainability topic page",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "accent",
+    "density": "compact",
+    "purpose": "stats-display",
+    "imagePattern": "noimg"
+  },
+  "contentPattern": {
+    "structure": "3 columns with title + large number + description",
+    "buttonCount": 0,
+    "imageCount": 0
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "pages displaying key metrics or targets",
+      "sustainability stats and KPIs",
+      "three-column text-only stat panels"
+    ],
+    "notSuitableFor": [
+      "image-heavy side-by-side layouts",
+      "two-column content layouts",
+      "columns with CTAs or interactive elements"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/sustainability/climate"],
+    "reuseCount": 1,
+    "lastUsed": "2026-03-17T11:56:00.000Z"
+  }
+}

@@ -1,0 +1,80 @@
+/* Full-width dark blue background */
+.columns-stats-container .columns-stats-wrapper {
+  max-width: unset;
+  padding: 0;
+}
+
+.columns-stats-container {
+  background-color: rgb(30 34 170);
+}
+
+.columns-stats {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 15px;
+}
+
+.columns-stats > div {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.columns-stats > div > div {
+  padding: 0 15px;
+  color: #fff;
+}
+
+/* Intro text column */
+.columns-stats > div > div:first-child p {
+  font-size: 18px;
+  line-height: 27px;
+  color: #fff;
+}
+
+/* Stats columns: "2030 target" label */
+.columns-stats > div > div:not(:first-child) p:first-child {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 32px;
+  color: #fff;
+  margin: 0 0 4px;
+}
+
+/* Stats columns: big number ("44% reduction") */
+.columns-stats > div > div:not(:first-child) p:nth-child(2) {
+  font-size: 34px;
+  font-weight: 400;
+  line-height: 1.1;
+  color: #fff;
+  margin: 0 0 8px;
+}
+
+/* Stats columns: description text */
+.columns-stats > div > div:not(:first-child) p:nth-child(3) {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 27px;
+  color: #fff;
+}
+
+.columns-stats img {
+  width: 100%;
+}
+
+@media (width >= 900px) {
+  .columns-stats > div {
+    flex-direction: row;
+    align-items: center;
+    gap: 0;
+  }
+
+  .columns-stats > div > div {
+    flex: 1;
+  }
+
+  /* White left border on stats columns (not first) */
+  .columns-stats > div > div:not(:first-child) {
+    border-left: 1px solid #fff;
+  }
+}

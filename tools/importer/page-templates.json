@@ -1,0 +1,59 @@
+{
+  "templates": [
+    {
+      "name": "sustainability-page",
+      "urls": [
+        "https://matthey.com/sustainability/climate"
+      ],
+      "description": "Sustainability topic page covering climate-related content and initiatives",
+      "blocks": [
+        {
+          "name": "hero-climate",
+          "instances": [".panels-hero"]
+        },
+        {
+          "name": "columns-stats",
+          "instances": [".panels-hero-panels"]
+        },
+        {
+          "name": "accordion-climate",
+          "instances": [".jmaccrdn"]
+        }
+      ],
+      "sections": [
+        {
+          "id": "section-1",
+          "name": "Hero Section",
+          "selector": ".panels-hero",
+          "style": null,
+          "blocks": ["hero-climate", "columns-stats"],
+          "defaultContent": []
+        },
+        {
+          "id": "section-2",
+          "name": "Emissions and Net Zero Content",
+          "selector": ".jmrich--text-inner",
+          "style": null,
+          "blocks": [],
+          "defaultContent": [".rich--text-details h4", ".rich--text-details p", ".rich--text-details picture"]
+        },
+        {
+          "id": "section-3",
+          "name": "Accordion Section",
+          "selector": ".jmaccrdn",
+          "style": null,
+          "blocks": ["accordion-climate"],
+          "defaultContent": []
+        },
+        {
+          "id": "section-4",
+          "name": "Call to Action",
+          "selector": ".jmlistblock",
+          "style": "grey",
+          "blocks": [],
+          "defaultContent": [".jmlistblock__title", ".jmlistblock__summary", ".jmlistblock__link"]
+        }
+      ]
+    }
+  ]
+}
