@@ -46,6 +46,14 @@
   max-width: none;
 }
 
+/* Footnote: small disclaimer text wrapped in <sup> */
+.default-content-wrapper p > sup:only-child {
+  font-size: 10px;
+  line-height: 25px;
+  vertical-align: baseline;
+  color: #333;
+}
+
 /* "Go back" subtitle spacing */
 .default-content-wrapper h2 + h6 {
   font-weight: 400;
