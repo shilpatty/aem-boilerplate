@@ -163,20 +163,23 @@ header nav .nav-brand p {
   align-items: center;
 }
 
-header nav .nav-brand > div > div {
+header nav .nav-brand > div > div,
+header nav .nav-brand > .default-content-wrapper {
   display: flex;
   align-items: center;
   gap: 8px;
 }
 
-header nav .nav-brand > div > div > p:nth-child(2) a {
+header nav .nav-brand > div > div > p:nth-child(2) a,
+header nav .nav-brand > .default-content-wrapper > p:nth-child(2) a {
   display: inline-flex;
   background-color: #1e3282;
   border-radius: 8px;
   overflow: hidden;
 }
 
-header nav .nav-brand > div > div > p:nth-child(2) img {
+header nav .nav-brand > div > div > p:nth-child(2) img,
+header nav .nav-brand > .default-content-wrapper > p:nth-child(2) img {
   filter: none;
 }
 
