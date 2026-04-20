@@ -5,3 +5,10 @@ blocks/form/rules/
 blocks/form/rules-doc/
 blocks/form/components/
 blocks/form/models/
+blocks/form/constant.js
+blocks/form/functions.js
+blocks/form/integrations/
+blocks/form/mappings.js
+blocks/form/submit.js
+blocks/form/transform.js
+blocks/form/util.js
