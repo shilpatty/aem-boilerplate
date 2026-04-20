@@ -97,6 +97,29 @@
 }
 
 @media (width >= 900px) {
+  .hero-saga {
+    max-width: 1200px;
+    margin: 0 auto 48px;
+  }
+
+  /* At desktop, image fills the hero and card overlays on top */
+  .hero-saga > div:first-child {
+    min-height: 400px;
+  }
+
+  .hero-saga > div:first-child img {
+    min-height: 400px;
+    object-fit: cover;
+  }
+
+  .hero-saga > div:nth-child(2) {
+    position: absolute;
+    bottom: 32px;
+    left: 32px;
+    margin: 0;
+    max-width: 480px;
+  }
+
   .hero-saga h2 {
     font-size: 40px;
     line-height: 48px;
