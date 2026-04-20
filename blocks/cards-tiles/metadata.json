@@ -1,0 +1,39 @@
+{
+  "variantName": "cards-tiles",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-04-16T10:06:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.saga.co.uk/",
+    "originPage": "Saga homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "compact",
+    "purpose": "navigation-tiles",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "image + heading + body text + CTA link",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "business unit navigation tiles",
+      "category landing tile grids",
+      "service overview cards with images"
+    ],
+    "notSuitableFor": [
+      "promotional campaign cards",
+      "article feed cards",
+      "cards without navigation purpose"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/content/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-04-16T10:06:00.000Z"
+  }
+}

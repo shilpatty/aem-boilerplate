@@ -1,17 +1,5 @@
-/* JMSans - Regular (body text) */
-@font-face {
-  font-family: jmsans;
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url('../fonts/JMSansRegular.woff2') format('woff2');
-}
+/* DM Sans is loaded via Google Fonts in head.html */
 
-/* JMSans - Medium (headings) */
-@font-face {
-  font-family: jmsans;
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url('../fonts/JMSansMedium.woff2') format('woff2');
-}
+/* Weights: 400 (body), 500 (medium), 600 (semi-bold), 700 (bold/headings) */
+
+/* This matches the Ambit font used on the original Saga website */

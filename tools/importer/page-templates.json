@@ -1,57 +1,133 @@
 {
   "templates": [
     {
-      "name": "sustainability-page",
+      "name": "homepage",
       "urls": [
-        "https://matthey.com/sustainability/climate"
+        "https://www.saga.co.uk/"
       ],
-      "description": "Sustainability topic page covering climate-related content and initiatives",
+      "description": "Saga homepage with hero banner, product categories, promotions, and brand messaging",
       "blocks": [
         {
-          "name": "hero-climate",
-          "instances": [".panels-hero"]
+          "name": "hero-saga",
+          "instances": [
+            ".hero-banner",
+            ".promotional-banner"
+          ]
         },
         {
-          "name": "columns-stats",
-          "instances": [".panels-hero-panels"]
+          "name": "cards-campaign",
+          "instances": [
+            "main > .container > .campaign-pods"
+          ]
         },
         {
-          "name": "accordion-climate",
-          "instances": [".jmaccrdn"]
+          "name": "cards-tiles",
+          "instances": [
+            ".new-bu-container"
+          ]
+        },
+        {
+          "name": "cards-articles",
+          "instances": [
+            ".mag-article-feed"
+          ]
+        },
+        {
+          "name": "columns-trust",
+          "instances": [
+            ".trust-panel"
+          ]
+        },
+        {
+          "name": "form",
+          "instances": [
+            ".form-subscribe"
+          ]
         }
       ],
       "sections": [
         {
           "id": "section-1",
-          "name": "Hero Section",
-          "selector": ".panels-hero",
+          "name": "Hero Banner",
+          "selector": ".hero-banner",
           "style": null,
-          "blocks": ["hero-climate", "columns-stats"],
+          "blocks": [
+            "hero-saga"
+          ],
           "defaultContent": []
         },
         {
           "id": "section-2",
-          "name": "Emissions and Net Zero Content",
-          "selector": ".jmrich--text-inner",
+          "name": "Campaign Pods Top",
+          "selector": "main > .container:first-of-type",
           "style": null,
-          "blocks": [],
-          "defaultContent": [".rich--text-details h4", ".rich--text-details p", ".rich--text-details picture"]
+          "blocks": [
+            "cards-campaign"
+          ],
+          "defaultContent": []
         },
         {
           "id": "section-3",
-          "name": "Accordion Section",
-          "selector": ".jmaccrdn",
+          "name": "Business Unit Tiles",
+          "selector": ".nav-tiles",
           "style": null,
-          "blocks": ["accordion-climate"],
+          "blocks": [
+            "cards-tiles"
+          ],
           "defaultContent": []
         },
         {
           "id": "section-4",
-          "name": "Call to Action",
-          "selector": ".jmlistblock",
-          "style": "grey",
-          "blocks": [],
-          "defaultContent": [".jmlistblock__title", ".jmlistblock__summary", ".jmlistblock__link"]
+          "name": "Promotional Banner",
+          "selector": [
+            ".container:has(.promotional-banner)",
+            ".promotional-banner"
+          ],
+          "style": null,
+          "blocks": [
+            "hero-saga"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-5",
+          "name": "Campaign Pods Bottom",
+          "selector": "main > .container:nth-of-type(4)",
+          "style": null,
+          "blocks": [
+            "cards-campaign"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-6",
+          "name": "Magazine Article Feed",
+          "selector": ".mag-article-feed",
+          "style": null,
+          "blocks": [
+            "cards-articles"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-7",
+          "name": "Trust Panel",
+          "selector": ".trust-panel",
+          "style": "dark",
+          "blocks": [
+            "columns-trust"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-8",
+          "name": "Newsletter Signup",
+          "selector": ".form-subscribe",
+          "style": "light-blue",
+          "blocks": [
+            "form"
+          ],
+          "defaultContent": []
         }
       ]
     }

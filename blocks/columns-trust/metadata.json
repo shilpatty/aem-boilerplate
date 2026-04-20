@@ -1,0 +1,39 @@
+{
+  "variantName": "columns-trust",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2026-04-16T10:06:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.saga.co.uk/",
+    "originPage": "Saga homepage",
+    "blockPosition": "bottom"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "spacious",
+    "purpose": "trust-awards",
+    "imagePattern": "icons"
+  },
+  "contentPattern": {
+    "structure": "heading + body text + award logo images",
+    "buttonCount": 0,
+    "imageCount": 6
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "award and trust badge sections",
+      "partner logo displays",
+      "certification showcase sections"
+    ],
+    "notSuitableFor": [
+      "text-only side-by-side layouts",
+      "image gallery layouts",
+      "stats or metrics displays"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/content/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-04-16T10:06:00.000Z"
+  }
+}

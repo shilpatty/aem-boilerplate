@@ -1,0 +1,120 @@
+/* hero-alliatus component tokens */
+
+/* All values extracted from hero-alliatus-measurements.txt */
+
+/* Figma node: 4047:1040 */
+
+.hero-alliatus {
+  /* ===== LAYOUT & DIMENSIONS ===== */
+  --hero-alliatus-columns: 2;
+  --hero-alliatus-gap: 80px;
+  --hero-alliatus-padding-top: 80px;
+  --hero-alliatus-padding-right: 72px;
+  --hero-alliatus-padding-bottom: 72px;
+  --hero-alliatus-padding-left: 73px;
+  --hero-alliatus-border-radius: 40px;
+  --hero-alliatus-mobile-padding: 48px 24px;
+
+  /* ===== CONTAINER COLORS ===== */
+  --hero-alliatus-background: #ffdd81;
+  --hero-alliatus-text-color: #303030;
+
+  /* ===== TYPOGRAPHY - HEADING ===== */
+  --hero-alliatus-heading-font-family: 'Playfair Display', georgia, serif;
+  --hero-alliatus-heading-font-size: 64px;
+  --hero-alliatus-heading-font-weight: 700;
+  --hero-alliatus-heading-line-height: 1.328;
+  --hero-alliatus-heading-color: #303030;
+  --hero-alliatus-heading-letter-spacing: normal;
+  --hero-alliatus-heading-text-transform: none;
+  --hero-alliatus-heading-font-style: normal;
+  --hero-alliatus-heading-margin-bottom: 40px;
+  --hero-alliatus-heading-mobile-font-size: 36px;
+
+  /* ===== TYPOGRAPHY - BODY ===== */
+  --hero-alliatus-body-font-family: 'Work Sans', sans-serif;
+  --hero-alliatus-body-font-size: 22px;
+  --hero-alliatus-body-font-weight: 400;
+  --hero-alliatus-body-line-height: 1.364;
+  --hero-alliatus-body-color: #303030;
+  --hero-alliatus-body-letter-spacing: normal;
+  --hero-alliatus-body-font-style: normal;
+  --hero-alliatus-body-to-buttons-gap: 100px;
+  --hero-alliatus-body-mobile-font-size: 18px;
+
+  /* ===== TYPOGRAPHY - RATING ===== */
+  --hero-alliatus-rating-font-size: 16px;
+  --hero-alliatus-rating-line-height: 1.1875;
+  --hero-alliatus-rating-margin-top: 25px;
+
+  /* ===== BUTTONS ===== */
+  --hero-alliatus-button-font-family: 'Work Sans', sans-serif;
+  --hero-alliatus-button-font-size: 20px;
+  --hero-alliatus-button-font-weight: 400;
+  --hero-alliatus-button-line-height: 1.15;
+  --hero-alliatus-button-border-radius: 12px;
+  --hero-alliatus-button-padding-y: 18px;
+  --hero-alliatus-button-padding-x: 40px;
+  --hero-alliatus-button-gap: 20px;
+  --hero-alliatus-button-mobile-font-size: 18px;
+
+  /* Primary button */
+  --hero-alliatus-button-primary-bg: #303030;
+  --hero-alliatus-button-primary-border: #303030;
+  --hero-alliatus-button-primary-color: #fff;
+
+  /* Secondary button */
+  --hero-alliatus-button-secondary-bg: transparent;
+  --hero-alliatus-button-secondary-border: #303030;
+  --hero-alliatus-button-secondary-color: #303030;
+
+  /* ===== IMAGE ===== */
+  --hero-alliatus-image-border-radius: 50px;
+
+  /* ===== DECORATIVE FRAMES ===== */
+  --hero-alliatus-frame-border-radius: 60px;
+  --hero-alliatus-frame1-border-color: #111;
+  --hero-alliatus-frame2-border-color: #303030;
+  --hero-alliatus-frame-border-width: 1px;
+
+  /* ===== PILLS / TAGS ===== */
+  --hero-alliatus-pill-bg: #fff;
+  --hero-alliatus-pill-border: 1px solid #303030;
+  --hero-alliatus-pill-border-radius: 100px;
+  --hero-alliatus-pill-font-family: 'Work Sans', sans-serif;
+  --hero-alliatus-pill-font-size: 18px;
+  --hero-alliatus-pill-font-weight: 400;
+  --hero-alliatus-pill-line-height: 1.167;
+  --hero-alliatus-pill-color: #303030;
+  --hero-alliatus-pill-padding: 13px 28px;
+  --hero-alliatus-pill-mobile-font-size: 16px;
+  --hero-alliatus-pill-mobile-padding: 12px 24px;
+
+  /* ===== STARBURST ===== */
+  --hero-alliatus-starburst-size: 124px;
+  --hero-alliatus-starburst-fill: #fff;
+  --hero-alliatus-starburst-stroke: #303030;
+  --hero-alliatus-starburst-mobile-size: 80px;
+
+  /* ===== SPARKLES ===== */
+  --hero-alliatus-sparkle1-width: 68px;
+  --hero-alliatus-sparkle1-height: 86px;
+  --hero-alliatus-sparkle2-width: 94px;
+  --hero-alliatus-sparkle2-height: 118px;
+  --hero-alliatus-sparkle-stroke: #fff;
+  --hero-alliatus-sparkle1-mobile-width: 40px;
+  --hero-alliatus-sparkle1-mobile-height: 50px;
+  --hero-alliatus-sparkle2-mobile-width: 52px;
+  --hero-alliatus-sparkle2-mobile-height: 66px;
+
+  /* ===== MEDIA AREA ===== */
+  --hero-alliatus-media-padding: 36px 12px 16px 36px;
+
+  /* ===== HOVER & TRANSITIONS ===== */
+  --hero-alliatus-hover-transform: none;
+  --hero-alliatus-transition-duration: 0ms;
+  --hero-alliatus-transition-timing: ease;
+
+  /* ===== SHADOWS ===== */
+  --hero-alliatus-shadow: none;
+}

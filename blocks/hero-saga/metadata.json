@@ -1,0 +1,39 @@
+{
+  "variantName": "hero-saga",
+  "baseBlock": "hero",
+  "version": "1.0.0",
+  "created": "2026-04-16T10:06:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.saga.co.uk/",
+    "originPage": "Saga homepage",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "hero-banner",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "background image + heading + body text + 1 CTA",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "homepage hero banners with background images",
+      "promotional banner sections with CTA",
+      "full-width hero with text overlay"
+    ],
+    "notSuitableFor": [
+      "hero sections without background images",
+      "dark-themed hero blocks",
+      "hero with multiple CTAs"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/content/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-04-16T10:06:00.000Z"
+  }
+}

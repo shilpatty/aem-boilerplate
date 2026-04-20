@@ -16,5 +16,27 @@ export default async function decorate(block) {
   const footer = document.createElement('div');
   while (fragment.firstElementChild) footer.append(fragment.firstElementChild);
 
+  // Restructure link columns into a grid
+  const allStrongs = footer.querySelectorAll('p strong');
+  if (allStrongs.length >= 3) {
+    const firstStrongP = allStrongs[0].closest('p');
+    const contentDiv = firstStrongP.parentElement;
+    const children = [...contentDiv.children];
+    const columns = document.createElement('div');
+    columns.className = 'footer-columns';
+    let currentCol = null;
+    children.forEach((child) => {
+      if (child.tagName === 'P' && child.querySelector('strong')) {
+        currentCol = document.createElement('div');
+        currentCol.className = 'footer-column';
+        columns.append(currentCol);
+      }
+      if (currentCol) {
+        currentCol.append(child);
+      }
+    });
+    contentDiv.append(columns);
+  }
+
   block.append(footer);
 }

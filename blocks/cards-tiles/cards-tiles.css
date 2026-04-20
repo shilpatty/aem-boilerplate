@@ -1,0 +1,111 @@
+main > .cards-tiles-container {
+  margin: 40px 0 0;
+  padding: 0;
+  background-color: transparent;
+}
+
+main > .cards-tiles-container > .cards-tiles-wrapper {
+  max-width: unset;
+  margin: 0;
+  padding: 48px 16px;
+  background-color: #c3e3e3;
+}
+
+main > .cards-tiles-container > .cards-tiles-wrapper > .cards-tiles {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+main > .cards-tiles-container > .default-content-wrapper {
+  display: none;
+}
+
+main > .cards-tiles-container > .hero-saga-wrapper {
+  max-width: unset;
+  margin: 0;
+  padding: 48px 0 0;
+}
+
+.cards-tiles > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.cards-tiles > ul > li {
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+  padding: 16px 16px 24px;
+}
+
+.cards-tiles .cards-tiles-card-image {
+  line-height: 0;
+}
+
+.cards-tiles .cards-tiles-card-image p {
+  margin: 0;
+  line-height: 0;
+}
+
+.cards-tiles .cards-tiles-card-image img {
+  width: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 8px;
+}
+
+.cards-tiles .cards-tiles-card-body {
+  padding: 8px 0 0;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.cards-tiles .cards-tiles-card-body p {
+  margin: 0 0 24px;
+  color: #232323;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.cards-tiles .cards-tiles-card-body p:last-child {
+  margin-top: auto;
+  margin-bottom: 0;
+}
+
+.cards-tiles .cards-tiles-card-body strong {
+  display: block;
+  color: #1e3282;
+  font-size: 21px;
+  font-weight: 900;
+  margin: 5px 0 8px;
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+
+/* Hide CTA link text - original tiles have no visible link */
+.cards-tiles .cards-tiles-card-body p:last-child:has(a) {
+  display: none;
+}
+
+@media (width >= 600px) {
+  .cards-tiles > ul {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (width >= 900px) {
+  main > .cards-tiles-container > .cards-tiles-wrapper {
+    padding: 48px 24px;
+  }
+
+  .cards-tiles > ul {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

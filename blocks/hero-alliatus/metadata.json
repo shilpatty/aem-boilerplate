@@ -1,0 +1,41 @@
+{
+  "variantName": "hero-alliatus",
+  "baseBlock": "hero",
+  "version": "1.0.0",
+  "created": "2026-03-18T12:03:00.000Z",
+  "sourceContext": {
+    "source": "figma",
+    "figmaFileKey": "I87fthBSV0IpyOtgFnyZR0",
+    "figmaNodeId": "4047:1040",
+    "figmaNodeName": "Hero",
+    "figmaUrl": "https://figma.com/design/I87fthBSV0IpyOtgFnyZR0?node-id=4047:1040"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "accent",
+    "density": "spacious",
+    "purpose": "hero",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "heading + body text + 1 image + 2 CTAs + decorative elements",
+    "buttonCount": 2,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "hero sections with yellow/accent background",
+      "landing pages with 2-column layout",
+      "pages requiring decorated image with pills and decorative shapes"
+    ],
+    "notSuitableFor": [
+      "simple hero banners with background image overlay",
+      "text-only hero sections",
+      "dark-themed hero sections"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/alliatus/hero-test"],
+    "reuseCount": 1,
+    "lastUsed": "2026-03-18T12:07:00.000Z"
+  }
+}

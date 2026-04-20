@@ -1,0 +1,110 @@
+/* Cards Pricing - 3-tier pricing cards */
+
+.cards-pricing > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+.cards-pricing > ul > li {
+  border: 1px solid #e0e0e0;
+  border-radius: 16px;
+  background-color: #fff;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.cards-pricing > ul > li:nth-child(2) {
+  background-color: #ffdd81;
+  border-color: #ffdd81;
+}
+
+.cards-pricing .cards-card-image {
+  display: none;
+}
+
+.cards-pricing .cards-card-body {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.cards-pricing .cards-card-body h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: #303030;
+  margin: 0 0 4px;
+}
+
+.cards-pricing .cards-card-body h3 em {
+  font-style: italic;
+}
+
+.cards-pricing .cards-card-body p {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #303030;
+  margin: 0 0 8px;
+}
+
+.cards-pricing .cards-card-body p:nth-child(2) {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: #303030;
+  margin: 8px 0 16px;
+}
+
+.cards-pricing .cards-card-body ul {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #303030;
+  padding-left: 0;
+  list-style: none;
+  margin: 0 0 24px;
+  flex: 1;
+}
+
+.cards-pricing .cards-card-body ul li {
+  padding: 6px 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.cards-pricing .cards-card-body .button-wrapper {
+  margin-top: auto;
+}
+
+.cards-pricing .cards-card-body a.button {
+  display: block;
+  text-align: center;
+  background-color: #303030;
+  color: #fff;
+  border-radius: 12px;
+  padding: 14px 32px;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  border-color: #303030;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.cards-pricing > ul > li:nth-child(2) .cards-card-body a.button {
+  background-color: #303030;
+}
+
+@media (width >= 900px) {
+  .cards-pricing > ul {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

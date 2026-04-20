@@ -1,9 +1,10 @@
 /* header and nav layout */
 header .nav-wrapper {
-  background-color: var(--background-color);
+  background-color: transparent;
   width: 100%;
   z-index: 2;
-  position: fixed;
+  position: relative;
+  color: #1e3282;
 }
 
 header nav {
@@ -31,10 +32,6 @@ header nav[aria-expanded='true'] {
 }
 
 @media (width >= 900px) {
-  header .nav-wrapper {
-    position: relative;
-  }
-
   header nav {
     display: flex;
     justify-content: space-between;
@@ -72,8 +69,8 @@ header nav .nav-hamburger button {
   border: 0;
   border-radius: 0;
   padding: 0;
-  background-color: var(--background-color);
-  color: inherit;
+  background-color: transparent;
+  color: #1e3282;
   overflow: initial;
   text-overflow: initial;
   white-space: initial;
@@ -142,15 +139,45 @@ header nav[aria-expanded='true'] .nav-hamburger-icon::after {
 /* brand */
 header .nav-brand {
   grid-area: brand;
-  flex-basis: 128px;
-  font-size: var(--heading-font-size-s);
-  font-weight: 700;
+  flex-basis: auto;
   line-height: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+header nav .nav-brand a {
+  color: #1e3282;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
 }
 
 header nav .nav-brand img {
-  width: 128px;
-  height: auto;
+  height: 40px;
+  width: auto;
+}
+
+header nav .nav-brand p {
+  display: inline-flex;
+  align-items: center;
+}
+
+header nav .nav-brand > div > div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+header nav .nav-brand > div > div > p:nth-child(2) a {
+  display: inline-flex;
+  background-color: #1e3282;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+header nav .nav-brand > div > div > p:nth-child(2) img {
+  filter: none;
 }
 
 /* sections */
@@ -170,11 +197,22 @@ header nav[aria-expanded='true'] .nav-sections {
 header nav .nav-sections ul {
   list-style: none;
   padding-left: 0;
-  font-size: var(--body-font-size-s);
+  font-size: 20px;
 }
 
 header nav .nav-sections ul > li {
-  font-weight: 500;
+  font-weight: 400;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+header nav .nav-sections ul > li > p {
+  cursor: pointer;
+}
+
+header nav .nav-sections ul > li > p strong {
+  font-weight: 400;
 }
 
 header nav .nav-sections ul > li > ul {
@@ -198,58 +236,51 @@ header nav .nav-sections ul > li > ul > li {
 
   header nav .nav-sections .nav-drop {
     position: relative;
-    padding-right: 16px;
     cursor: pointer;
   }
 
-  header nav .nav-sections .nav-drop::after {
-    content: '';
-    display: inline-block;
-    position: absolute;
-    top: 0.5em;
-    right: 2px;
-    transform: rotate(135deg);
-    width: 6px;
-    height: 6px;
-    border: 2px solid currentcolor;
-    border-radius: 0 1px 0 0;
-    border-width: 2px 2px 0 0;
-  }
-
-  header nav .nav-sections .nav-drop[aria-expanded='true']::after {
-    top: unset;
-    bottom: 0.5em;
-    transform: rotate(315deg);
-  }
-
-  header nav .nav-sections ul {
+  header nav .nav-sections > div > ul,
+  header nav .nav-sections > div > div > ul,
+  header nav .nav-sections .default-content-wrapper > ul {
     display: flex;
     gap: 24px;
     margin: 0;
   }
 
-  header nav .nav-sections .default-content-wrapper > ul > li {
+  /* stylelint-disable no-descending-specificity */
+  header nav .nav-sections .default-content-wrapper > ul > li,
+  header nav .nav-sections > div > ul > li,
+  header nav .nav-sections > div > div > ul > li {
     flex: 0 1 auto;
     position: relative;
   }
 
-  header nav .nav-sections .default-content-wrapper > ul > li > ul {
+  header nav .nav-sections .default-content-wrapper > ul > li > ul,
+  header nav .nav-sections > div > ul > li > ul,
+  header nav .nav-sections > div > div > ul > li > ul {
     display: none;
     position: relative;
   }
 
-  header nav .nav-sections .default-content-wrapper > ul > li[aria-expanded='true'] > ul {
+  header nav .nav-sections .default-content-wrapper > ul > li[aria-expanded='true'] > ul,
+  header nav .nav-sections > div > ul > li[aria-expanded='true'] > ul,
+  header nav .nav-sections > div > div > ul > li[aria-expanded='true'] > ul {
     display: block;
     position: absolute;
     left: -24px;
-    width: 200px;
+    width: 220px;
     top: 150%;
     padding: 16px;
-    background-color: var(--light-color);
+    background-color: #fff;
+    color: #232323;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgb(0 0 0 / 15%);
     white-space: initial;
   }
 
-  header nav .nav-sections .default-content-wrapper > ul > li > ul::before {
+  header nav .nav-sections .default-content-wrapper > ul > li > ul::before,
+  header nav .nav-sections > div > ul > li > ul::before,
+  header nav .nav-sections > div > div > ul > li > ul::before {
     content: '';
     position: absolute;
     top: -8px;
@@ -258,15 +289,45 @@ header nav .nav-sections ul > li > ul > li {
     height: 0;
     border-left: 8px solid transparent;
     border-right: 8px solid transparent;
-    border-bottom: 8px solid var(--light-color);
+    border-bottom: 8px solid #fff;
   }
 
-  header nav .nav-sections .default-content-wrapper > ul > li > ul > li {
+  header nav .nav-sections .default-content-wrapper > ul > li > ul > li,
+  header nav .nav-sections > div > ul > li > ul > li,
+  header nav .nav-sections > div > div > ul > li > ul > li {
     padding: 8px 0;
   }
+
+  header nav .nav-sections .default-content-wrapper > ul > li > ul > li a,
+  header nav .nav-sections > div > ul > li > ul > li a,
+  header nav .nav-sections > div > div > ul > li > ul > li a {
+    color: #232323;
+  }
+
+  header nav .nav-sections .default-content-wrapper > ul > li > ul > li a:hover,
+  header nav .nav-sections > div > ul > li > ul > li a:hover,
+  header nav .nav-sections > div > div > ul > li > ul > li a:hover {
+    color: #1e3282;
+  }
+  /* stylelint-enable no-descending-specificity */
 }
 
 /* tools */
 header nav .nav-tools {
   grid-area: tools;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+header nav .nav-tools p a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #aad7d7;
+  color: #1e3282;
+  padding: 12px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  white-space: nowrap;
 }

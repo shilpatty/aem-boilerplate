@@ -1,0 +1,53 @@
+/* Columns Numbers - Stats bar with large numbers */
+
+.columns-numbers > div {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.columns-numbers > div > div {
+  padding: 16px 0;
+}
+
+.columns-numbers > div > div h2,
+.columns-numbers > div > div h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #303030;
+  margin: 0 0 8px;
+}
+
+.columns-numbers > div > div p {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #303030;
+  margin: 0;
+}
+
+@media (width >= 900px) {
+  .columns-numbers > div {
+    flex-direction: row;
+    gap: 0;
+  }
+
+  .columns-numbers > div > div {
+    flex: 1;
+    padding: 24px 32px;
+    border-left: 1px solid #e0e0e0;
+  }
+
+  .columns-numbers > div > div:first-child {
+    border-left: none;
+    padding-left: 0;
+  }
+
+  .columns-numbers > div > div h2,
+  .columns-numbers > div > div h3 {
+    font-size: 42px;
+  }
+}

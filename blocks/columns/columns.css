@@ -23,11 +23,50 @@
   .columns > div {
     align-items: center;
     flex-direction: unset;
-    gap: 24px;
+    gap: 0;
+    background-color: #f2f9f9;
+    border-radius: 16px;
+    overflow: hidden;
+    max-width: 800px;
+    margin: 0 auto;
   }
 
   .columns > div > div {
     flex: 1;
     order: unset;
+  }
+
+  .columns > div > div:first-child {
+    padding: 40px;
+  }
+
+  .columns > div > div:first-child h3 {
+    color: #1e3282;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 1.2;
+    margin: 0 0 16px;
+    padding-left: 20px;
+    border-left: 5px solid #fbb175;
+  }
+
+  .columns > div > div:first-child p {
+    color: #232323;
+    font-size: 16px;
+    line-height: 24px;
+    margin: 0 0 16px;
+  }
+
+  .columns > div > div:first-child a {
+    color: #1e3282;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 18px;
+  }
+
+  .columns > div > .columns-img-col img {
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0;
   }
 }

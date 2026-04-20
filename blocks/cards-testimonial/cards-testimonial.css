@@ -1,0 +1,50 @@
+/* Cards Testimonial - Quote cards with attribution */
+
+.cards-testimonial > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+.cards-testimonial > ul > li {
+  border: 1px solid #e0e0e0;
+  border-radius: 0;
+  background-color: #fff;
+  padding: 0;
+}
+
+.cards-testimonial .cards-card-body {
+  padding: 24px;
+}
+
+.cards-testimonial .cards-card-body p {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #303030;
+  margin: 0 0 16px;
+}
+
+.cards-testimonial .cards-card-body p:last-child {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 0;
+}
+
+.cards-testimonial .cards-card-body p:last-child em {
+  font-style: italic;
+}
+
+.cards-testimonial .cards-card-image {
+  display: none;
+}
+
+@media (width >= 900px) {
+  .cards-testimonial > ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

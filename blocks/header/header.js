@@ -60,7 +60,9 @@ function focusNavSection() {
  */
 function toggleAllNavSections(sections, expanded = false) {
   if (!sections) return;
-  sections.querySelectorAll('.nav-sections .default-content-wrapper > ul > li').forEach((section) => {
+  const items = sections.querySelectorAll('.nav-sections .default-content-wrapper > ul > li');
+  const allItems = items.length ? items : sections.querySelectorAll('.nav-sections ul > li');
+  allItems.forEach((section) => {
     section.setAttribute('aria-expanded', expanded);
   });
 }
@@ -139,7 +141,17 @@ export default async function decorate(block) {
 
   const navSections = nav.querySelector('.nav-sections');
   if (navSections) {
-    navSections.querySelectorAll(':scope .default-content-wrapper > ul > li').forEach((navSection) => {
+    // Remove button classes from nav-sections links
+    navSections.querySelectorAll('.button').forEach((button) => {
+      button.className = '';
+      const buttonContainer = button.closest('.button-container');
+      if (buttonContainer) buttonContainer.className = '';
+    });
+
+    // Find nav items - support both with and without default-content-wrapper
+    const navItems = navSections.querySelectorAll(':scope .default-content-wrapper > ul > li');
+    const items = navItems.length ? navItems : navSections.querySelectorAll(':scope ul > li');
+    items.forEach((navSection) => {
       if (navSection.querySelector('ul')) navSection.classList.add('nav-drop');
       navSection.addEventListener('click', () => {
         if (isDesktop.matches) {

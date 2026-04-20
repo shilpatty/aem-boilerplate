@@ -1,0 +1,313 @@
+/* Import component-specific tokens */
+@import url('./hero-alliatus-tokens.css');
+
+/* Hero Alliatus - Yellow hero with 2-column layout, decorative elements */
+
+.hero-alliatus-container {
+  margin: 0;
+}
+
+.hero-alliatus-container .hero-alliatus-wrapper {
+  max-width: unset;
+  padding: 16px;
+}
+
+/* Container */
+.hero-alliatus {
+  background-color: var(--hero-alliatus-background);
+  padding: var(--hero-alliatus-mobile-padding);
+  border-radius: var(--hero-alliatus-border-radius);
+}
+
+.hero-alliatus picture {
+  position: static;
+}
+
+.hero-alliatus .hero-alliatus-media {
+  position: relative;
+  margin-top: 32px;
+  padding: var(--hero-alliatus-media-padding);
+}
+
+/* Image wrapper - provides context for decorative frames */
+.hero-alliatus .hero-alliatus-media > div {
+  position: relative;
+}
+
+/* Upper-left decorative frame stroke: Figma 4047:901 */
+
+/* rounded-[60px] border 1px #111111, offset upper-left of image */
+.hero-alliatus .hero-alliatus-media > div::before {
+  content: '';
+  position: absolute;
+  top: -22px;
+  left: -23px;
+  width: 100%;
+  height: 90%;
+  border: var(--hero-alliatus-frame-border-width) solid var(--hero-alliatus-frame1-border-color);
+  border-radius: var(--hero-alliatus-frame-border-radius);
+  pointer-events: none;
+}
+
+/* Bottom-right decorative frame stroke: Figma 4047:902 */
+
+/* rounded-[60px] border 1px #303030, offset bottom-right of image */
+.hero-alliatus .hero-alliatus-media > div::after {
+  content: '';
+  position: absolute;
+  top: 28%;
+  left: 41%;
+  width: 64%;
+  height: 76%;
+  border: var(--hero-alliatus-frame-border-width) solid var(--hero-alliatus-frame2-border-color);
+  border-radius: var(--hero-alliatus-frame-border-radius);
+  pointer-events: none;
+}
+
+/* Image */
+.hero-alliatus img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: auto;
+  border-radius: var(--hero-alliatus-image-border-radius);
+  object-fit: cover;
+  display: block;
+}
+
+/* Heading */
+.hero-alliatus h1 {
+  font-family: var(--hero-alliatus-heading-font-family);
+  font-size: var(--hero-alliatus-heading-mobile-font-size);
+  font-weight: var(--hero-alliatus-heading-font-weight);
+  line-height: var(--hero-alliatus-heading-line-height);
+  color: var(--hero-alliatus-heading-color);
+  margin: 0 0 var(--hero-alliatus-heading-margin-bottom);
+}
+
+.hero-alliatus h1 em {
+  font-style: italic;
+}
+
+/* Body text */
+.hero-alliatus p {
+  font-family: var(--hero-alliatus-body-font-family);
+  font-size: var(--hero-alliatus-body-mobile-font-size);
+  font-weight: var(--hero-alliatus-body-font-weight);
+  line-height: var(--hero-alliatus-body-line-height);
+  color: var(--hero-alliatus-body-color);
+  max-width: unset;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* Body text paragraph - large gap before buttons */
+.hero-alliatus .hero-alliatus-body > p:first-of-type {
+  margin-bottom: var(--hero-alliatus-body-to-buttons-gap);
+}
+
+/* Rating text */
+.hero-alliatus .hero-alliatus-body > p:last-child {
+  font-size: var(--hero-alliatus-rating-font-size);
+  line-height: var(--hero-alliatus-rating-line-height);
+  margin-top: var(--hero-alliatus-rating-margin-top);
+}
+
+.hero-alliatus .button-wrapper {
+  display: inline-block;
+  margin-right: var(--hero-alliatus-button-gap);
+  margin-bottom: 0;
+}
+
+/* Buttons */
+.hero-alliatus a.button:any-link {
+  border-radius: var(--hero-alliatus-button-border-radius);
+  padding: var(--hero-alliatus-button-padding-y) var(--hero-alliatus-button-padding-x);
+  font-family: var(--hero-alliatus-button-font-family);
+  font-size: var(--hero-alliatus-button-mobile-font-size);
+  font-weight: var(--hero-alliatus-button-font-weight);
+  line-height: var(--hero-alliatus-button-line-height);
+}
+
+/* Primary button */
+.hero-alliatus a.button.primary {
+  background-color: var(--hero-alliatus-button-primary-bg);
+  border-color: var(--hero-alliatus-button-primary-border);
+  color: var(--hero-alliatus-button-primary-color);
+}
+
+/* Secondary button */
+.hero-alliatus a.button.secondary {
+  background-color: var(--hero-alliatus-button-secondary-bg);
+  border: var(--hero-alliatus-frame-border-width) solid var(--hero-alliatus-button-secondary-border);
+  color: var(--hero-alliatus-button-secondary-color);
+}
+
+.hero-alliatus a:any-link {
+  color: var(--hero-alliatus-text-color);
+}
+
+/* ===== Floating pills ===== */
+.hero-alliatus-pill {
+  position: absolute;
+  background-color: var(--hero-alliatus-pill-bg);
+  border: var(--hero-alliatus-pill-border);
+  border-radius: var(--hero-alliatus-pill-border-radius);
+  padding: var(--hero-alliatus-pill-mobile-padding);
+  font-family: var(--hero-alliatus-pill-font-family);
+  font-size: var(--hero-alliatus-pill-mobile-font-size);
+  font-weight: var(--hero-alliatus-pill-font-weight);
+  line-height: var(--hero-alliatus-pill-line-height);
+  color: var(--hero-alliatus-pill-color);
+  white-space: nowrap;
+  z-index: 2;
+}
+
+/* "Fresh insights." - top-right of image */
+.hero-alliatus-pill-1 {
+  top: 16%;
+  right: -8px;
+}
+
+/* "Collective growth." - mid-right */
+.hero-alliatus-pill-2 {
+  top: 62%;
+  right: -16px;
+}
+
+/* "Real conversations." - bottom-left */
+.hero-alliatus-pill-3 {
+  bottom: 4%;
+  left: -8px;
+}
+
+/* ===== 8-pointed starburst ===== */
+.hero-alliatus-starburst {
+  position: absolute;
+  top: -36px;
+  left: 8%;
+  width: var(--hero-alliatus-starburst-mobile-size);
+  height: var(--hero-alliatus-starburst-mobile-size);
+  z-index: 2;
+
+  /* stylelint-disable-next-line function-url-quotes */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 124 124'%3E%3Cpolygon points='62,0 72,39 106,18 85,52 124,62 85,72 106,106 72,85 62,124 52,85 18,106 39,72 0,62 39,52 18,18 52,39' fill='%23fff' stroke='%23303030' stroke-width='1'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+/* ===== 4-pointed white outline sparkles ===== */
+.hero-alliatus-sparkle {
+  position: absolute;
+  z-index: 2;
+
+  /* stylelint-disable-next-line function-url-quotes */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cpath d='M20 0Q22 16 40 20Q22 24 20 40Q18 24 0 20Q18 16 20 0Z' fill='none' stroke='%23ffffff' stroke-width='1.5'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+/* Sparkle 1 - upper-left area of image */
+.hero-alliatus-sparkle-1 {
+  top: 22%;
+  left: 8%;
+  width: var(--hero-alliatus-sparkle1-mobile-width);
+  height: var(--hero-alliatus-sparkle1-mobile-height);
+}
+
+/* Sparkle 2 - lower-right area of image */
+.hero-alliatus-sparkle-2 {
+  bottom: 2%;
+  right: 4%;
+  width: var(--hero-alliatus-sparkle2-mobile-width);
+  height: var(--hero-alliatus-sparkle2-mobile-height);
+}
+
+/* ===== Desktop (900px+) ===== */
+@media (width >= 900px) {
+  .hero-alliatus-container .hero-alliatus-wrapper {
+    padding: 24px 32px;
+  }
+
+  /* Desktop: 2-column grid */
+  .hero-alliatus {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--hero-alliatus-gap);
+    align-items: center;
+    padding: var(--hero-alliatus-padding-top) var(--hero-alliatus-padding-right) var(--hero-alliatus-padding-bottom) var(--hero-alliatus-padding-left);
+  }
+
+  .hero-alliatus .hero-alliatus-media {
+    order: 2;
+    margin-top: 0;
+  }
+
+  .hero-alliatus .hero-alliatus-body {
+    order: 1;
+  }
+
+  /* Desktop heading */
+  .hero-alliatus h1 {
+    font-size: var(--hero-alliatus-heading-font-size);
+    line-height: var(--hero-alliatus-heading-line-height);
+  }
+
+  /* Desktop body */
+
+  /* stylelint-disable-next-line no-descending-specificity */
+  .hero-alliatus p {
+    font-size: var(--hero-alliatus-body-font-size);
+    line-height: var(--hero-alliatus-body-line-height);
+  }
+
+  /* Desktop buttons */
+  .hero-alliatus a.button:any-link {
+    font-size: var(--hero-alliatus-button-font-size);
+    padding: var(--hero-alliatus-button-padding-y) var(--hero-alliatus-button-padding-x);
+  }
+
+  /* Desktop starburst */
+  .hero-alliatus-starburst {
+    top: -40px;
+    left: 6%;
+    width: var(--hero-alliatus-starburst-size);
+    height: var(--hero-alliatus-starburst-size);
+  }
+
+  /* Desktop sparkles */
+  .hero-alliatus-sparkle-1 {
+    top: 20%;
+    left: 6%;
+    width: var(--hero-alliatus-sparkle1-width);
+    height: var(--hero-alliatus-sparkle1-height);
+  }
+
+  .hero-alliatus-sparkle-2 {
+    bottom: 0;
+    right: 2%;
+    width: var(--hero-alliatus-sparkle2-width);
+    height: var(--hero-alliatus-sparkle2-height);
+  }
+
+  /* Desktop pills */
+  .hero-alliatus-pill {
+    font-size: var(--hero-alliatus-pill-font-size);
+    padding: var(--hero-alliatus-pill-padding);
+  }
+
+  .hero-alliatus-pill-1 {
+    top: 14%;
+    right: -20px;
+  }
+
+  .hero-alliatus-pill-2 {
+    top: 60%;
+    right: -32px;
+  }
+
+  .hero-alliatus-pill-3 {
+    bottom: 2%;
+    left: -16px;
+  }
+}

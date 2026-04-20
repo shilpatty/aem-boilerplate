@@ -1,0 +1,39 @@
+{
+  "variantName": "cards-campaign",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-04-16T10:06:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.saga.co.uk/",
+    "originPage": "Saga homepage",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "compact",
+    "purpose": "campaign-promo",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "image + heading + body text + CTA button",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "promotional campaign cards with images",
+      "product highlight cards with CTAs",
+      "marketing offer cards"
+    ],
+    "notSuitableFor": [
+      "article feed cards without body text",
+      "navigation tile cards",
+      "cards without images"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/content/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-04-16T10:06:00.000Z"
+  }
+}

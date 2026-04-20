@@ -1,0 +1,39 @@
+{
+  "variantName": "cards-articles",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-04-16T10:06:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.saga.co.uk/",
+    "originPage": "Saga homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "compact",
+    "purpose": "article-feed",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "image + badge + title link",
+    "buttonCount": 0,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "magazine article feed cards",
+      "blog post listing cards",
+      "content article previews with image and title"
+    ],
+    "notSuitableFor": [
+      "promotional cards with body text and CTAs",
+      "navigation tiles",
+      "product cards"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/content/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-04-16T10:06:00.000Z"
+  }
+}

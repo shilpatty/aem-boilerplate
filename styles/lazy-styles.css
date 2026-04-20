@@ -1,5 +1,67 @@
 /* add global styles that can be loaded post LCP here */
 
+/* Hide duplicate nav-tiles text content that appears outside the cards-tiles block */
+.cards-tiles-container > .default-content-wrapper {
+  display: none;
+}
+
+/* Saga section styles (from section-metadata) */
+main > .section.dark {
+  background-color: #1a3768;
+  color: #fff;
+  margin: 40px 0;
+}
+
+main > .section.light-blue {
+  background-color: #f2f9f9;
+  margin: 40px 0;
+  padding: 48px 16px;
+  text-align: center;
+}
+
+main > .section.light-blue h3 {
+  color: #1e3282;
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+main > .section.light-blue p {
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #232323;
+  font-size: 1.125rem;
+  line-height: 1.55;
+}
+
+/* Newsletter form wrapper - light blue background */
+main > .section > .form-wrapper {
+  background-color: #f2f9f9;
+  padding: 48px 24px;
+  max-width: 1200px;
+  margin: 40px auto;
+}
+
+main > .section > .form-wrapper .form {
+  --form-background-color: transparent;
+
+  background-color: transparent;
+}
+
+.form-wrapper > .form > div > div > h3 {
+  color: #1e3282;
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.form-wrapper > .form > div > div > p {
+  max-width: 700px;
+  color: #232323;
+  font-size: 1.125rem;
+  line-height: 1.55;
+}
+
 /* Constrain standalone content images and add vertical spacing */
 .default-content-wrapper p > img:only-child {
   max-width: 834px;
@@ -122,5 +184,262 @@
     align-items: center;
     padding: 11px 0 14px;
     border-top: 1px solid #ddd;
+  }
+}
+
+/* ===== Alliatus Landing Page Styles ===== */
+
+/* Section heading labels (h6) - scoped to Alliatus block containers */
+.columns-about-container > .default-content-wrapper h6,
+.cards-steps-container > .default-content-wrapper h6,
+.columns-audience-container > .default-content-wrapper h6,
+.accordion-faq-container > .default-content-wrapper h6 {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #303030;
+  margin: 0 0 8px;
+}
+
+/* Section main headings (h2) - scoped to Alliatus block containers */
+.columns-about-container > .default-content-wrapper h2,
+.cards-steps-container > .default-content-wrapper h2,
+.columns-audience-container > .default-content-wrapper h2,
+.cards-testimonial-container > .default-content-wrapper h2,
+.cards-team-container > .default-content-wrapper h2,
+.cards-pricing-container > .default-content-wrapper h2,
+.accordion-faq-container > .default-content-wrapper h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: #303030;
+  margin: 0 0 32px;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.columns-about-container > .default-content-wrapper h2 em,
+.cards-steps-container > .default-content-wrapper h2 em,
+.columns-audience-container > .default-content-wrapper h2 em,
+.cards-testimonial-container > .default-content-wrapper h2 em,
+.cards-team-container > .default-content-wrapper h2 em,
+.cards-pricing-container > .default-content-wrapper h2 em,
+.accordion-faq-container > .default-content-wrapper h2 em {
+  font-style: italic;
+}
+
+/* "What's Included" section within cards-steps */
+/* stylelint-disable-next-line no-descending-specificity */
+.cards-steps-container > .default-content-wrapper:last-child p {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 15px;
+  color: #303030;
+  line-height: 1.6;
+}
+
+/* Yellow CTA section */
+.section.yellow-cta {
+  background-color: #ffdd81;
+  text-align: center;
+  margin: 0;
+  padding: 64px 0;
+}
+
+.section.yellow-cta h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: #303030;
+  margin: 0 0 16px;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.section.yellow-cta h2 em {
+  font-style: italic;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.section.yellow-cta p {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 18px;
+  color: #303030;
+  margin: 0 0 8px;
+}
+
+.section.yellow-cta a.button.primary {
+  background-color: #303030;
+  border-color: #303030;
+  color: #fff;
+  border-radius: 12px;
+  padding: 16px 36px;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  margin-top: 16px;
+}
+
+/* Dark footer section */
+.section.dark-footer {
+  background-color: #303030;
+  margin: 0;
+  padding: 40px 0;
+  text-align: center;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.section.dark-footer p {
+  font-family: 'Work Sans', sans-serif;
+  color: #fff;
+  margin: 0 0 8px;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.section.dark-footer p:first-child {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 22px;
+  font-weight: 700;
+  font-style: italic;
+  margin-bottom: 16px;
+}
+
+.section.dark-footer a:any-link {
+  color: #ccc;
+}
+
+.section.dark-footer a:hover {
+  color: #fff;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.section.dark-footer p:last-child {
+  font-size: 14px;
+  color: #999;
+  margin-top: 16px;
+}
+
+/* Hide metadata section */
+main > .section.metadata {
+  display: none;
+}
+
+/* Breadcrumb bar */
+main > .section:first-child:has(+ .section.hero-product-container) {
+  background-color: #1e3282;
+  padding: 12px 16px;
+  margin: 0;
+}
+
+main > .section:first-child:has(+ .section.hero-product-container) > .default-content-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+main > .section:first-child:has(+ .section.hero-product-container) p {
+  margin: 0;
+  color: #fff;
+  font-size: 14px;
+}
+
+main > .section:first-child:has(+ .section.hero-product-container) a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  margin-left: 16px;
+}
+
+main > .section:first-child:has(+ .section.hero-product-container) a:first-child {
+  margin-left: 0;
+}
+
+main > .section:first-child:has(+ .section.hero-product-container) a:hover {
+  text-decoration: underline;
+}
+
+/* Section heading with accent bar (e.g. "More from Saga insurance") */
+main > .section.cards-articles-container > .default-content-wrapper:first-child h3 {
+  color: #1e3282;
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1.2;
+  margin: 0 0 8px;
+  padding-left: 20px;
+  border-left: 5px solid #fbb175;
+}
+
+main > .section.cards-articles-container > .default-content-wrapper:first-child p {
+  color: #232323;
+  font-size: 16px;
+  line-height: 24px;
+  margin: 0 0 24px;
+}
+
+/* Saga motorhome info card section */
+/* stylelint-disable-next-line no-descending-specificity */
+main > .section:not([class*="-container"]) > .default-content-wrapper:has(h3 + p + p + p + ul) {
+  background-color: #f5f5f5;
+  border-radius: 16px;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 48px;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+main > .section:not([class*="-container"]) > .default-content-wrapper:has(h3 + p + p + p + ul) h3 {
+  color: #232323;
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 0 16px;
+  text-align: center;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+main > .section:not([class*="-container"]) > .default-content-wrapper:has(h3 + p + p + p + ul) p {
+  color: #232323;
+  font-size: 16px;
+  line-height: 24px;
+  margin: 0 0 12px;
+}
+
+main > .section:not([class*="-container"]) > .default-content-wrapper:has(h3 + p + p + p + ul) ul {
+  list-style: none;
+  padding: 0;
+}
+
+main > .section:not([class*="-container"]) > .default-content-wrapper:has(h3 + p + p + p + ul) ul li {
+  padding: 4px 0 4px 24px;
+  position: relative;
+}
+
+main > .section:not([class*="-container"]) > .default-content-wrapper:has(h3 + p + p + p + ul) ul li::before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 12px;
+  height: 12px;
+  background-color: #fbb175;
+  border-radius: 2px;
+}
+
+@media (width >= 900px) {
+  .columns-about-container > .default-content-wrapper h2,
+  .cards-steps-container > .default-content-wrapper h2,
+  .columns-audience-container > .default-content-wrapper h2,
+  .cards-testimonial-container > .default-content-wrapper h2,
+  .cards-team-container > .default-content-wrapper h2,
+  .cards-pricing-container > .default-content-wrapper h2,
+  .accordion-faq-container > .default-content-wrapper h2 {
+    font-size: 40px;
+  }
+
+  .section.yellow-cta h2 {
+    font-size: 44px;
   }
 }

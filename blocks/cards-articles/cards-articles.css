@@ -1,0 +1,180 @@
+main > .cards-articles-container {
+  margin: 40px auto;
+  padding: 0 16px;
+}
+
+main > .cards-articles-container > .cards-articles-wrapper {
+  max-width: 1232px;
+  margin: 48px auto 0;
+}
+
+.cards-articles-carousel {
+  overflow: hidden;
+}
+
+.cards-articles > ul,
+.cards-articles-carousel > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 16px;
+  transition: transform 0.4s ease;
+}
+
+.cards-articles-carousel > ul > li {
+  flex: 0 0 calc(50% - 8px);
+  min-width: 0;
+}
+
+.cards-articles-nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.cards-articles-counter {
+  font-size: 16px;
+  color: #232323;
+  min-width: 40px;
+  text-align: center;
+}
+
+.cards-articles-prev,
+.cards-articles-next {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid #aad7d7;
+  background: #fff;
+  color: #1e3282;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+  padding: 0;
+}
+
+.cards-articles-prev:hover,
+.cards-articles-next:hover {
+  background-color: #e8f4f4;
+}
+
+.cards-articles-prev:disabled,
+.cards-articles-next:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.cards-articles > ul > li,
+.cards-articles-carousel > ul > li {
+  background-color: #fff;
+  border: 1px solid #d4d4d4;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.cards-articles .cards-articles-card-image {
+  line-height: 0;
+}
+
+.cards-articles .cards-articles-card-image p {
+  margin: 0;
+  line-height: 0;
+}
+
+.cards-articles .cards-articles-card-image img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+}
+
+.cards-articles .cards-articles-card-body {
+  padding: 12px 24px 16px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.cards-articles .cards-articles-card-body::before {
+  content: 'PRODUCT INFORMATION';
+  display: inline-block;
+  background-color: #1e3282;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 6px 12px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+  align-self: flex-start;
+}
+
+.cards-articles .cards-articles-card-body p {
+  margin: 0 0 8px;
+  color: #232323;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.cards-articles .cards-articles-card-body p:first-child {
+  margin-bottom: 4px;
+}
+
+/* Override AEM button styling for article links */
+.cards-articles .cards-articles-card-body .button-wrapper {
+  margin: 0;
+}
+
+.cards-articles .cards-articles-card-body a.button {
+  background-color: transparent;
+  border: none;
+  color: #1e3282;
+  padding: 0;
+  margin: 0;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 28px;
+  text-decoration: none;
+  white-space: normal;
+  text-align: left;
+  display: inline;
+  overflow: visible;
+}
+
+.cards-articles .cards-articles-card-body a.button:hover {
+  background-color: transparent;
+  text-decoration: underline;
+  color: #1e3282;
+}
+
+.cards-articles .cards-articles-card-body a {
+  color: #1e3282;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 28px;
+}
+
+.cards-articles .cards-articles-card-body a:hover {
+  text-decoration: underline;
+}
+
+@media (width >= 900px) {
+  main > .cards-articles-container {
+    padding: 0 24px;
+  }
+
+  .cards-articles-carousel > ul > li {
+    flex: 0 0 calc(25% - 12px);
+  }
+}

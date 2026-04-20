@@ -1,0 +1,58 @@
+/* Cards Team - Team member cards with photos */
+
+.cards-team > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.cards-team > ul > li {
+  border: none;
+  background-color: transparent;
+}
+
+.cards-team .cards-card-image {
+  line-height: 0;
+  margin-bottom: 16px;
+}
+
+.cards-team > ul > li img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+.cards-team .cards-card-body {
+  padding: 0;
+}
+
+.cards-team .cards-card-body p {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #303030;
+  margin: 0 0 4px;
+}
+
+.cards-team .cards-card-body p:first-child {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #303030;
+  margin: 0 0 8px;
+}
+
+.cards-team .cards-card-body p:first-child em {
+  font-style: italic;
+}
+
+@media (width >= 900px) {
+  .cards-team > ul {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
