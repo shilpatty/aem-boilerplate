@@ -13,6 +13,41 @@ import {
 } from './aem.js';
 
 /**
+ * Moves all attributes from a given elmenet to another given element.
+ * @param {Element} from the element to copy attributes from
+ * @param {Element} to the element to copy attributes to
+ * @param {string[]} attributes the list of attributes to move (empty=all)
+ */
+export function moveAttributes(from, to, attributes) {
+  if (!attributes) {
+    [...from.attributes].forEach(({ nodeName }) => {
+      to.setAttribute(nodeName, from.getAttribute(nodeName));
+      from.removeAttribute(nodeName);
+    });
+  } else {
+    attributes.forEach((attr) => {
+      to.setAttribute(attr, from.getAttribute(attr));
+      from.removeAttribute(attr);
+    });
+  }
+}
+
+/**
+ * Moves UE instrumentation attributes from a given element to another given element.
+ * @param {Element} from the element to copy attributes from
+ * @param {Element} to the element to copy attributes to
+ */
+export function moveInstrumentation(from, to) {
+  moveAttributes(
+    from,
+    to,
+    [...from.attributes]
+      .map(({ nodeName }) => nodeName)
+      .filter((attr) => attr.startsWith('data-aue-') || attr.startsWith('data-richtext-')),
+  );
+}
+
+/**
  * Builds hero block and prepends to main in a new section.
  * @param {Element} main The container element
  */
@@ -168,6 +203,10 @@ async function loadLazy(doc) {
 
   loadCSS(`${window.hlx.codeBasePath}/styles/lazy-styles.css`);
   loadFonts();
+
+  if (window.location.hostname.endsWith('.aem.page') || window.location.hostname === 'localhost') {
+    import('./editor-support.js');
+  }
 }
 
 /**
