@@ -1,7 +1,6 @@
 import {
   decorateBlock,
   decorateBlocks,
-  decorateButtons,
   decorateIcons,
   decorateSections,
   loadBlock,
@@ -9,7 +8,6 @@ import {
   loadSections,
 } from './aem.js';
 import { decorateRichtext } from './editor-support-rte.js';
-import { decorateMain } from './scripts.js';
 
 let promiseChanges$ = Promise.resolve();
 
@@ -41,6 +39,8 @@ async function applyChanges(event) {
       if (!newMain) return false;
       newMain.style.display = 'none';
       element.insertAdjacentElement('afterend', newMain);
+      // eslint-disable-next-line import/no-cycle
+      const { decorateMain } = await import('./scripts.js');
       decorateMain(newMain);
       decorateRichtext(newMain);
       await loadSections(newMain);
@@ -58,7 +58,6 @@ async function applyChanges(event) {
       if (newBlock) {
         newBlock.style.display = 'none';
         block.insertAdjacentElement('afterend', newBlock);
-        decorateButtons(newBlock);
         decorateIcons(newBlock);
         decorateBlock(newBlock);
         decorateRichtext(newBlock);
@@ -76,7 +75,6 @@ async function applyChanges(event) {
           const [newSection] = newElements;
           newSection.style.display = 'none';
           element.insertAdjacentElement('afterend', newSection);
-          decorateButtons(newSection);
           decorateIcons(newSection);
           decorateRichtext(newSection);
           decorateSections(parentElement);
@@ -86,7 +84,6 @@ async function applyChanges(event) {
           newSection.style.display = null;
         } else {
           element.replaceWith(...newElements);
-          decorateButtons(parentElement);
           decorateIcons(parentElement);
           decorateRichtext(parentElement);
         }

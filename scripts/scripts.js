@@ -205,6 +205,7 @@ async function loadLazy(doc) {
   loadFonts();
 
   if (window.location.hostname.endsWith('.aem.page') || window.location.hostname === 'localhost') {
+    // eslint-disable-next-line import/no-cycle
     import('./editor-support.js');
   }
 }
