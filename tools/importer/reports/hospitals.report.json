@@ -6,7 +6,7 @@
   "title": "Private Hospital treatment - Hospitals near me | Nuffield Health",
   "template": "hospitals-listing",
   "blocks": [
-    "hero-saga",
+    "hero-banner",
     "cards-features",
     "cards-features",
     "cards-tiles",
