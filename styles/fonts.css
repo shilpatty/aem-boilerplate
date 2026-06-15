@@ -1,5 +1,7 @@
-/* DM Sans is loaded via Google Fonts in head.html */
+/* Hanken Grotesk is loaded via Google Fonts in head.html */
 
-/* Weights: 400 (body), 500 (medium), 600 (semi-bold), 700 (bold/headings) */
+/* Weights: 400 (body), 500 (medium/nav), 600 (semi-bold/buttons), 700-800 (bold/headings) */
 
-/* This matches the Ambit font used on the original Saga website */
+/* Nuffield Health's proprietary "Nuffield" typeface is not publicly hosted.
+   Hanken Grotesk is used as the closest free humanist sans-serif match for
+   both headings and body text. */

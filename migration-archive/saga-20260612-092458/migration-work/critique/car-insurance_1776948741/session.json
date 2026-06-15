@@ -1,0 +1,17 @@
+{
+  "pageName": "car-insurance",
+  "originalUrl": "https://www.saga.co.uk/car-insurance",
+  "migratedUrl": "http://localhost:3000/car-insurance.html",
+  "migratedPath": "/car-insurance",
+  "created": "2026-04-23T12:52:21+00:00",
+  "iterations": [],
+  "status": {
+    "original_collection_complete": true
+  },
+  "collection_metadata": {
+    "original": {
+      "elements": 27,
+      "timestamp": "2026-04-23T13:38:44.171Z"
+    }
+  }
+}

@@ -1,0 +1,269 @@
+{
+  "url": "https://www.saga.co.uk/car-insurance",
+  "title": "Car Insurance",
+  "sections": [
+    {
+      "id": "section-1",
+      "name": "Hero Banner",
+      "style": null,
+      "authoringDecisions": [
+        {
+          "type": "block",
+          "blockName": "hero-product",
+          "description": "Product page hero with full-width background image, overlay with uppercase title, champagne accent bar, two CTA buttons, and award logo badges. Reuses existing hero-product pattern from motorhome page.",
+          "selector": ".hero.hero--large",
+          "contentModel": {
+            "row1": "Background image (man by car)",
+            "row2": "Heading 'CAR INSURANCE' + CTA buttons (Get a quote, Retrieve a quote)",
+            "row3": "Award logos (Which? Best Buy, Defaqto)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "section-2",
+      "name": "Important Notice and Introduction",
+      "style": null,
+      "authoringDecisions": [
+        {
+          "type": "default-content",
+          "description": "Alert notice about Ageas partnership — heading and two paragraphs. An author would write this as a callout/notice with heading and body text.",
+          "selector": ".alert.alert--large.alert--white"
+        },
+        {
+          "type": "default-content",
+          "description": "Introduction heading and paragraph about finding the best car insurance. Simple rich text content.",
+          "selector": "#anchor_Carinsurance .rich-text"
+        }
+      ]
+    },
+    {
+      "id": "section-3",
+      "name": "New and Existing Customer CTA",
+      "style": null,
+      "authoringDecisions": [
+        {
+          "type": "block",
+          "blockName": "columns-cta",
+          "description": "Two side-by-side cards: 'New to Saga?' and 'Already a customer?' each with heading, description, and two CTA buttons. This is a 2-column layout.",
+          "selector": ".content-double",
+          "contentModel": {
+            "row1": "Col1: 'New to Saga?' heading + description + 2 buttons | Col2: 'Already a customer?' heading + description + 2 buttons"
+          }
+        }
+      ]
+    },
+    {
+      "id": "section-4",
+      "name": "Which Accreditation Callout",
+      "style": null,
+      "authoringDecisions": [
+        {
+          "type": "block",
+          "blockName": "columns-award",
+          "description": "Award badge image alongside heading and descriptive paragraph. 2-column layout with image left, text right.",
+          "selector": ".accreditation-callout",
+          "contentModel": {
+            "row1": "Col1: Which? Best Buy award image | Col2: Heading + body paragraph"
+          }
+        }
+      ]
+    },
+    {
+      "id": "section-5",
+      "name": "Coverage Details and Features",
+      "style": null,
+      "authoringDecisions": [
+        {
+          "type": "default-content",
+          "description": "Rich text: heading 'What does car insurance cover?' followed by explanatory paragraphs with inline links.",
+          "selector": "#anchor_What'scovered .rich-text"
+        },
+        {
+          "type": "block",
+          "blockName": "cards-features",
+          "description": "Grid of 6 feature items under 'Why choose our car insurance' heading. Each item has an SVG icon, bold title, and description. Best modeled as cards with icon, title, and description.",
+          "selector": ".content-group.content-group--lg",
+          "contentModel": {
+            "headerRow": "'Why choose our car insurance' heading + description",
+            "rows": "6 items, each: icon image + title + description paragraph"
+          }
+        }
+      ]
+    },
+    {
+      "id": "section-6",
+      "name": "Provider Information Alert",
+      "style": null,
+      "authoringDecisions": [
+        {
+          "type": "default-content",
+          "description": "Simple alert with heading and paragraph about who provides the insurance. Author writes as styled notice/callout.",
+          "selector": ".alert:has(.alert__title)"
+        }
+      ]
+    },
+    {
+      "id": "section-7",
+      "name": "Compare Cover Table",
+      "style": null,
+      "authoringDecisions": [
+        {
+          "type": "default-content",
+          "description": "Heading 'Compare car insurance from Saga'",
+          "selector": "#anchor_Comparecover"
+        },
+        {
+          "type": "block",
+          "blockName": "table-compare",
+          "description": "3-column comparison table (Standard/Select/Plus) with 9+ feature rows using tick/dash icons and text values. Complex structured data best modeled as a table block.",
+          "selector": ".table.table--comparison",
+          "contentModel": {
+            "headers": "Cover and benefits | Saga Standard | Saga Select | Saga Plus (2-year fixed price badge)",
+            "rows": "Feature name + description | tick/dash/text per column"
+          }
+        },
+        {
+          "type": "default-content",
+          "description": "'Get a quote' CTA button below the table.",
+          "selector": ".table__post-text"
+        }
+      ]
+    },
+    {
+      "id": "section-8",
+      "name": "Product Feature Panels",
+      "style": null,
+      "authoringDecisions": [
+        {
+          "type": "block",
+          "blockName": "cards-panels",
+          "description": "Two side-by-side content panels, each with image, heading with colored accent border, description, and 'Find out more' link. Best modeled as cards.",
+          "selector": ".content-panel.content-panel--alt",
+          "contentModel": {
+            "rows": "2 items, each: image + heading (with accent) + description + CTA link"
+          }
+        }
+      ]
+    },
+    {
+      "id": "section-9",
+      "name": "What is Car Insurance Accordion",
+      "style": null,
+      "authoringDecisions": [
+        {
+          "type": "default-content",
+          "description": "Marble texture divider — decorative image. Author places as inline image.",
+          "selector": ".marble-divider"
+        },
+        {
+          "type": "block",
+          "blockName": "accordion-faq",
+          "description": "Accordion with header 'What is car insurance?' intro text, and 4 expandable items with detailed Q&A content including bulleted lists.",
+          "selector": ".accordion.accordion--stacked",
+          "contentModel": {
+            "headerRow": "Heading + intro text",
+            "rows": "4 items: question title | answer body (paragraphs + lists)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "section-10",
+      "name": "Help Links",
+      "style": null,
+      "authoringDecisions": [
+        {
+          "type": "block",
+          "blockName": "cards-links",
+          "description": "Grid of 6 icon-label link buttons under 'What can we help with?' heading. Each item: SVG icon + text label + link. Best modeled as cards with icons.",
+          "selector": ".group-icon-button",
+          "contentModel": {
+            "headerRow": "Heading 'What can we help with?'",
+            "rows": "6 items: icon + label + link URL"
+          }
+        }
+      ]
+    },
+    {
+      "id": "section-11",
+      "name": "Customer Reviews",
+      "style": null,
+      "authoringDecisions": [
+        {
+          "type": "block",
+          "blockName": "carousel-reviews",
+          "description": "Customer testimonial carousel with heading, quote icon, 3 rotating testimonial cards (quote + customer name/location), prev/next navigation, and Trustpilot widget.",
+          "selector": ".testimonial",
+          "contentModel": {
+            "headerRow": "Heading 'Here's what our customers have to say about us...'",
+            "rows": "3 testimonial cards: quote text + customer name"
+          }
+        }
+      ]
+    },
+    {
+      "id": "section-12",
+      "name": "Defaqto Accreditation Callout",
+      "style": null,
+      "authoringDecisions": [
+        {
+          "type": "block",
+          "blockName": "columns-award",
+          "description": "Award badge image alongside heading and descriptive paragraph. Same pattern as Section 4 (Which? callout).",
+          "selector": ".accreditation-callout",
+          "contentModel": {
+            "row1": "Col1: Defaqto 5 Star award image | Col2: Heading + body paragraph"
+          }
+        }
+      ]
+    },
+    {
+      "id": "section-13",
+      "name": "Car Insurance FAQs",
+      "style": null,
+      "authoringDecisions": [
+        {
+          "type": "block",
+          "blockName": "accordion-faq",
+          "description": "FAQ accordion with header, intro text, 4 expandable Q&A items, and 'See all FAQs' button.",
+          "selector": "#anchor_FAQs .accordion",
+          "contentModel": {
+            "headerRow": "Heading 'Car insurance FAQs' + intro text",
+            "rows": "4 items: question | answer paragraphs with links",
+            "footerRow": "'See all FAQs' button link"
+          }
+        }
+      ]
+    },
+    {
+      "id": "section-14",
+      "name": "Bottom CTA Banner",
+      "style": "champagne-accent",
+      "authoringDecisions": [
+        {
+          "type": "default-content",
+          "description": "Centered CTA banner with heading and two buttons on champagne accent background. Author writes heading + buttons; section metadata provides styling.",
+          "selector": ".content-single.content-single__accent"
+        }
+      ]
+    },
+    {
+      "id": "section-15",
+      "name": "More from Saga Cards",
+      "style": null,
+      "authoringDecisions": [
+        {
+          "type": "block",
+          "blockName": "cards-articles",
+          "description": "Card carousel with heading 'More from Saga', description, and 7 article/product cards. Each card: image, badge label (Article/Holidays/Product information), linked heading, description paragraph. Reuses cards-articles pattern from homepage.",
+          "selector": ".card-carousel",
+          "contentModel": {
+            "headerRow": "Heading 'More from Saga' + description",
+            "rows": "7 items: image + badge label + linked heading + description"
+          }
+        }
+      ]
+    }
+  ]
+}

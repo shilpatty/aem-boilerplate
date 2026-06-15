@@ -1,0 +1,39 @@
+{
+  "variantName": "cards-panels",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-04-23T12:23:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.nuffieldhealth.com/",
+    "originPage": "Car insurance product page",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "product-panels",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "image + heading with accent + description + CTA link",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "product feature panels with images",
+      "promotional content panels with CTAs",
+      "side-by-side product highlights"
+    ],
+    "notSuitableFor": [
+      "article feed cards",
+      "icon-based feature grids",
+      "navigation tile grids"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/car-insurance"],
+    "reuseCount": 1,
+    "lastUsed": "2026-04-23T12:23:00.000Z"
+  }
+}

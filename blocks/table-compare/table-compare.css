@@ -1,0 +1,91 @@
+.table-compare.block {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.table-compare.block table {
+  width: 100%;
+  max-width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+}
+
+.table-compare.block table thead tr {
+  background-color: #1e3282;
+  color: #fff;
+}
+
+.table-compare.block table th {
+  font-weight: 700;
+  padding: 16px 20px;
+  text-align: center;
+  font-size: 16px;
+  vertical-align: bottom;
+}
+
+.table-compare.block table th:first-child {
+  text-align: left;
+}
+
+.table-compare.block table th p,
+.table-compare.block table td p {
+  margin: 0;
+}
+
+.table-compare.block table td p + p {
+  margin-top: 0.25em;
+}
+
+.table-compare.block table td {
+  padding: 16px 20px;
+  text-align: center;
+  vertical-align: top;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.table-compare.block table td:first-child {
+  text-align: left;
+  max-width: 400px;
+}
+
+.table-compare.block table td:first-child p + p {
+  font-size: 14px;
+  color: #666;
+  margin-top: 0;
+}
+
+.table-compare.block table td:first-child strong,
+.table-compare.block table td:first-child p:first-child {
+  font-weight: 700;
+  color: #1e3282;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.table-compare.block table tbody tr:nth-child(even) {
+  background-color: #f2f9f9;
+}
+
+.table-compare.block table th em {
+  display: block;
+  font-size: 12px;
+  font-weight: 400;
+  background-color: #aad7d7;
+  color: #1e3282;
+  border-radius: 4px;
+  padding: 4px 8px;
+  margin-top: 4px;
+  font-style: normal;
+}
+
+@media (width >= 600px) {
+  .table-compare.block table {
+    font-size: 15px;
+  }
+}
+
+@media (width >= 900px) {
+  .table-compare.block table {
+    font-size: 16px;
+  }
+}

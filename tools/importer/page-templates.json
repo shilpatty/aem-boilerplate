@@ -1,131 +1,260 @@
 {
+  "metadata": {
+    "projectType": "xwalk"
+  },
   "templates": [
     {
       "name": "homepage",
       "urls": [
-        "https://www.saga.co.uk/"
+        "https://www.nuffieldhealth.com/"
       ],
-      "description": "Saga homepage with hero banner, product categories, promotions, and brand messaging",
+      "description": "Nuffield Health homepage with hero banner, service navigation, promotional content, and brand messaging",
       "blocks": [
         {
-          "name": "hero-saga",
+          "name": "hero-banner",
           "instances": [
-            ".hero-banner",
-            ".promotional-banner"
+            ".hero-location-finder"
           ]
         },
         {
-          "name": "cards-campaign",
+          "name": "cards-features",
           "instances": [
-            "main > .container > .campaign-pods"
+            "#more-than-just-a-gym .grid--3"
+          ]
+        },
+        {
+          "name": "cards-services",
+          "instances": [
+            "#gyms .grid--2",
+            "#hospitals .grid--2"
           ]
         },
         {
           "name": "cards-tiles",
           "instances": [
-            ".new-bu-container"
-          ]
-        },
-        {
-          "name": "cards-articles",
-          "instances": [
-            ".mag-article-feed"
-          ]
-        },
-        {
-          "name": "columns-trust",
-          "instances": [
-            ".trust-panel"
-          ]
-        },
-        {
-          "name": "form",
-          "instances": [
-            ".form-subscribe"
+            "#more-from-nuffield .grid--4"
           ]
         }
       ],
       "sections": [
         {
-          "id": "section-1",
-          "name": "Hero Banner",
-          "selector": ".hero-banner",
+          "id": "hero",
+          "name": "Hero",
+          "selector": ".hero-location-finder",
           "style": null,
           "blocks": [
-            "hero-saga"
+            "hero-banner"
           ],
           "defaultContent": []
         },
         {
-          "id": "section-2",
-          "name": "Campaign Pods Top",
-          "selector": "main > .container:first-of-type",
+          "id": "more-than-just-a-gym",
+          "name": "Welcome to Nuffield Health",
+          "selector": "#more-than-just-a-gym",
           "style": null,
           "blocks": [
-            "cards-campaign"
+            "cards-features"
           ],
-          "defaultContent": []
+          "defaultContent": [
+            "#more-than-just-a-gym .rich-text h2",
+            "#more-than-just-a-gym .rich-text p"
+          ]
         },
         {
-          "id": "section-3",
-          "name": "Business Unit Tiles",
-          "selector": ".nav-tiles",
+          "id": "gyms",
+          "name": "Fitness and Wellbeing Clubs",
+          "selector": "#gyms",
+          "style": null,
+          "blocks": [
+            "cards-services"
+          ],
+          "defaultContent": [
+            "#gyms .rich-text"
+          ]
+        },
+        {
+          "id": "hospitals",
+          "name": "Hospitals",
+          "selector": "#hospitals",
+          "style": null,
+          "blocks": [
+            "cards-services"
+          ],
+          "defaultContent": [
+            "#hospitals .rich-text"
+          ]
+        },
+        {
+          "id": "more-from-nuffield",
+          "name": "More from Nuffield Health",
+          "selector": "#more-from-nuffield",
           "style": null,
           "blocks": [
             "cards-tiles"
           ],
-          "defaultContent": []
+          "defaultContent": [
+            "#more-from-nuffield .rich-text h2"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "hospitals-listing",
+      "urls": [
+        "https://www.nuffieldhealth.com/hospitals?ref=main-nav"
+      ],
+      "description": "Hospitals listing page presenting Nuffield Health hospital locations, search/filter, and supporting content",
+      "blocks": [
+        {
+          "name": "hero-banner",
+          "instances": [
+            ".hero-location-finder"
+          ]
         },
         {
-          "id": "section-4",
-          "name": "Promotional Banner",
-          "selector": [
-            ".container:has(.promotional-banner)",
-            ".promotional-banner"
-          ],
+          "name": "cards-features",
+          "instances": [
+            "#why-nuffield .grid--2"
+          ]
+        },
+        {
+          "name": "cards-tiles",
+          "instances": [
+            "#how-can-we-help-you .grid--4"
+          ]
+        },
+        {
+          "name": "cards-locations",
+          "instances": [
+            "#our-locations .location-finder"
+          ]
+        },
+        {
+          "name": "accordion-faq",
+          "instances": [
+            "#your-journey .pcof-accordion",
+            "#faqs .accordion"
+          ]
+        },
+        {
+          "name": "columns-about",
+          "instances": [
+            "#ways-to-pay .grid--2"
+          ]
+        },
+        {
+          "name": "form",
+          "instances": [
+            "form.form"
+          ]
+        },
+        {
+          "name": "cards-articles",
+          "instances": [
+            "#articles .promo-editorial-scroller"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "hero",
+          "name": "Hero",
+          "selector": ".hero-location-finder",
           "style": null,
           "blocks": [
-            "hero-saga"
+            "hero-banner"
           ],
           "defaultContent": []
         },
         {
-          "id": "section-5",
-          "name": "Campaign Pods Bottom",
-          "selector": "main > .container:nth-of-type(4)",
-          "style": null,
+          "id": "why-nuffield",
+          "name": "Why choose Nuffield Health",
+          "selector": "#why-nuffield",
+          "style": "light",
           "blocks": [
-            "cards-campaign"
+            "cards-features"
           ],
-          "defaultContent": []
+          "defaultContent": [
+            "#why-nuffield .rich-text h2"
+          ]
         },
         {
-          "id": "section-6",
-          "name": "Magazine Article Feed",
-          "selector": ".mag-article-feed",
-          "style": null,
+          "id": "how-can-we-help-you",
+          "name": "How can we help you today",
+          "selector": "#how-can-we-help-you",
+          "style": "light",
           "blocks": [
-            "cards-articles"
+            "cards-tiles"
           ],
-          "defaultContent": []
+          "defaultContent": [
+            "#how-can-we-help-you .rich-text h2"
+          ]
         },
         {
-          "id": "section-7",
-          "name": "Trust Panel",
-          "selector": ".trust-panel",
-          "style": "dark",
+          "id": "our-locations",
+          "name": "Our locations",
+          "selector": "#our-locations",
+          "style": "light",
           "blocks": [
-            "columns-trust"
+            "cards-locations"
           ],
-          "defaultContent": []
+          "defaultContent": [
+            "#our-locations .grid--1 h2"
+          ]
         },
         {
-          "id": "section-8",
-          "name": "Newsletter Signup",
-          "selector": ".form-subscribe",
-          "style": "light-blue",
+          "id": "your-journey",
+          "name": "Your Nuffield Health journey",
+          "selector": "#your-journey",
+          "style": "limestone",
+          "blocks": [
+            "accordion-faq"
+          ],
+          "defaultContent": [
+            "#your-journey .cms-headings-h2"
+          ]
+        },
+        {
+          "id": "ways-to-pay",
+          "name": "Ways to pay",
+          "selector": "#ways-to-pay",
+          "style": "light",
+          "blocks": [
+            "columns-about"
+          ],
+          "defaultContent": [
+            "#ways-to-pay .rich-text .cms-headings-h2"
+          ]
+        },
+        {
+          "id": "faqs",
+          "name": "Frequently asked questions",
+          "selector": "#faqs",
+          "style": "light",
+          "blocks": [
+            "accordion-faq"
+          ],
+          "defaultContent": [
+            "#faqs .cms-headings-h2"
+          ]
+        },
+        {
+          "id": "ask-a-question",
+          "name": "Ask a question",
+          "selector": "#contact-us-form",
+          "style": "accent",
           "blocks": [
             "form"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "related-articles",
+          "name": "Related articles",
+          "selector": "#articles",
+          "style": "light",
+          "blocks": [
+            "cards-articles"
           ],
           "defaultContent": []
         }

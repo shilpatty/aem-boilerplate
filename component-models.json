@@ -77,7 +77,7 @@
   ],
   "models": [
     {
-      "id": "hero-saga",
+      "id": "hero-banner",
       "fields": [
         {
           "component": "reference",

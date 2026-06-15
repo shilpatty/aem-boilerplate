@@ -1,120 +1,67 @@
 footer {
-  background-color: #1e3282;
+  background-color: #333;
   color: #fff;
-  font-size: 16px;
+  font-size: 12px;
   position: relative;
-}
-
-footer::before {
-  content: '';
-  display: block;
-  width: 100%;
-  height: 144px;
-  background-image: url("https://asset.saga.co.uk/common/brand2021/marble/Saga_Marble_04.svg");
-  background-size: cover;
-  background-position: center;
-}
-
-footer::after {
-  content: '';
-  display: block;
-  width: 152px;
-  height: 180px;
-  background-image: url("https://www.saga.co.uk/helix-contentlibrary/saga/global_components/saga_signifer_white_01.svg");
-  background-color: #1e3282;
-  background-size: 100px auto;
-  background-repeat: no-repeat;
-  background-position: center 24px;
-  position: absolute;
-  top: 54px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 1;
-  pointer-events: none;
-  border-radius: 50% / 30% 30% 70% 70%;
-  padding: 16px;
 }
 
 footer .footer > div {
   margin: auto;
   max-width: 1200px;
-  padding: 40px 24px 24px;
+  padding: 20px 24px;
 }
 
 footer .footer p {
   margin: 0;
 }
 
-/* Brand section */
-footer .footer .section:first-child a {
-  color: #fff;
-  text-decoration: none;
-  display: inline-block;
+/* hide the logo section - original footer has no logo */
+footer .footer .section:first-child {
+  display: none;
 }
 
-footer .footer .section:first-child img {
-  height: 32px;
-  width: auto;
-  filter: brightness(0) invert(1);
-}
-
-/* Links columns grid */
-footer .footer .footer-columns {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 32px;
-}
-
-footer .footer .footer-column p strong {
-  color: #aad7d7;
-  font-size: 18px;
-  font-weight: 500;
-  display: block;
-  margin-bottom: 16px;
-}
-
-footer .footer .footer-column ul {
+/* link rows - inline, small white text */
+footer .footer .section:nth-child(2) ul {
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 0 0 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 24px;
 }
 
-footer .footer .footer-column ul li {
-  padding: 4px 0;
+footer .footer .section:nth-child(2) ul:last-child {
+  margin-bottom: 0;
 }
 
-footer .footer .footer-columns .footer-column a {
+footer .footer .section:nth-child(2) li {
+  padding: 0;
+}
+
+footer .footer .section:nth-child(2) a {
   color: #fff;
   text-decoration: none;
-  font-size: 16px;
-  line-height: 1.75;
+  font-size: 12px;
+  line-height: 1.6;
 }
 
-footer .footer .footer-columns .footer-column a:hover {
+footer .footer .section:nth-child(2) a:hover {
   text-decoration: underline;
 }
 
-/* Copyright section */
+/* copyright / charity text */
 footer .footer .section:last-child {
-  border-top: 1px solid rgb(255 255 255 / 20%);
-  padding-top: 24px;
-  margin-top: 24px;
+  margin-top: 8px;
 }
 
 footer .footer .section:last-child p {
-  color: rgb(255 255 255 / 70%);
-  font-size: 14px;
+  color: rgb(255 255 255 / 80%);
+  font-size: 12px;
   margin: 0 0 4px;
 }
 
 @media (width >= 900px) {
   footer .footer > div {
-    padding: 40px 32px 24px;
-  }
-}
-
-@media (width <= 599px) {
-  footer .footer .footer-columns {
-    grid-template-columns: repeat(2, 1fr);
+    padding: 20px 32px;
   }
 }

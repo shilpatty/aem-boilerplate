@@ -1,0 +1,39 @@
+{
+  "variantName": "cards-links",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-04-23T12:23:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.nuffieldhealth.com/",
+    "originPage": "Car insurance product page",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "compact",
+    "purpose": "icon-link-grid",
+    "imagePattern": "icons"
+  },
+  "contentPattern": {
+    "structure": "icon + label + link",
+    "buttonCount": 0,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "help/support link grids with icons",
+      "quick action link collections",
+      "resource navigation grids"
+    ],
+    "notSuitableFor": [
+      "content-heavy cards with descriptions",
+      "article feed cards",
+      "promotional campaign cards"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/car-insurance"],
+    "reuseCount": 1,
+    "lastUsed": "2026-04-23T12:23:00.000Z"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "variantName": "columns-award",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2026-04-23T12:23:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.nuffieldhealth.com/",
+    "originPage": "Car insurance product page",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "compact",
+    "purpose": "award-callout",
+    "imagePattern": "icons"
+  },
+  "contentPattern": {
+    "structure": "award image + heading + body text",
+    "buttonCount": 0,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "award badge callout sections",
+      "accreditation display with image and text",
+      "certification showcase with description"
+    ],
+    "notSuitableFor": [
+      "multi-image gallery layouts",
+      "CTA-heavy action sections",
+      "complex multi-column layouts"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/car-insurance"],
+    "reuseCount": 1,
+    "lastUsed": "2026-04-23T12:23:00.000Z"
+  }
+}

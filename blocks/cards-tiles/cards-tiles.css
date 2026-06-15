@@ -1,14 +1,14 @@
 main > .cards-tiles-container {
-  margin: 40px 0 0;
+  margin: 40px 0 80px;
   padding: 0;
   background-color: transparent;
 }
 
 main > .cards-tiles-container > .cards-tiles-wrapper {
-  max-width: unset;
-  margin: 0;
-  padding: 48px 16px;
-  background-color: #c3e3e3;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  background-color: transparent;
 }
 
 main > .cards-tiles-container > .cards-tiles-wrapper > .cards-tiles {
@@ -17,31 +17,264 @@ main > .cards-tiles-container > .cards-tiles-wrapper > .cards-tiles {
 }
 
 main > .cards-tiles-container > .default-content-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+main > .cards-tiles-container > .default-content-wrapper > h2 {
+  display: inline-block;
+  padding-bottom: 10px;
+  border-bottom: 10px solid var(--brand-orange);
+  text-align: left;
+}
+
+/* "More from Nuffield Health" has no underline in the original */
+main > .cards-tiles-container > .default-content-wrapper > h2#more-from-nuffield-health {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+/* "Our locations" finder: hide broken JS-widget controls (list/map toggle)
+   that imported as plain text */
+main > .cards-tiles-container > .default-content-wrapper > p {
   display: none;
 }
 
-main > .cards-tiles-container > .hero-saga-wrapper {
-  max-width: unset;
+/* boxed location finder: dark-grey band, heading left + search controls right */
+/* stylelint-disable no-descending-specificity */
+main > .cards-tiles-container > .default-content-wrapper > p.location-finder {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin: 24px 0 0;
+  padding: 25px 30px;
+  background-color: #5f6062;
+  color: #fff;
+}
+
+main > .cards-tiles-container > .default-content-wrapper > p.location-finder .location-finder-heading {
+  flex: 0 0 auto;
+  max-width: 320px;
+  font-size: 24px;
+  line-height: 1.25;
+}
+
+main > .cards-tiles-container > .default-content-wrapper > p.location-finder .location-finder-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  font-size: 16px;
+}
+
+main > .cards-tiles-container > .default-content-wrapper > p.location-finder .location-finder-input {
+  width: 276px;
+  max-width: 100%;
+  padding: 15px 12px;
+  background-color: #fff;
+  border: 1px solid #5f6062;
+  border-radius: 3px;
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 400;
+}
+
+main > .cards-tiles-container > .default-content-wrapper > p.location-finder .location-finder-controls > a:last-child {
+  color: #fff;
+  text-decoration: underline;
+  font-weight: 400;
+}
+
+/* List view / Map view segmented toggle, inside the grey box */
+main > .cards-tiles-container > .default-content-wrapper > p.location-finder-toggle {
+  display: flex;
   margin: 0;
-  padding: 48px 0 0;
+  padding: 30px 30px 20px;
+  background-color: #f5f5f5;
+}
+
+main > .cards-tiles-container > .default-content-wrapper > p.location-finder-toggle span {
+  padding: 18px 30px 13px;
+  border: 1px solid var(--brand-green-bright);
+  background-color: #fff;
+  color: var(--text-color);
+  font-size: 16px;
+  cursor: pointer;
+}
+
+main > .cards-tiles-container > .default-content-wrapper > p.location-finder-toggle span:first-child {
+  border-radius: 3px 0 0 3px;
+}
+
+main > .cards-tiles-container > .default-content-wrapper > p.location-finder-toggle span:last-child {
+  border-left: none;
+  border-radius: 0 3px 3px 0;
+}
+
+main > .cards-tiles-container > .default-content-wrapper > p.location-finder-toggle span.location-finder-toggle-active {
+  background-color: var(--brand-green-bright);
+  color: #fff;
+  border-color: var(--brand-green-bright);
+}
+
+/* hidden checkbox driving the "View more" expand/collapse */
+main > .cards-tiles-container > .default-content-wrapper > input.location-finder-more-toggle {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+
+/* "Our locations" location card grid, inside the grey box */
+main > .cards-tiles-container > .default-content-wrapper > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0 30px 16px;
+  background-color: #f5f5f5;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+/* collapsed: show only the first 6 cards until "View more" is toggled */
+main > .cards-tiles-container > .default-content-wrapper > input.location-finder-more-toggle:not(:checked) + ul > li:nth-child(n + 7) {
+  display: none;
+}
+
+main > .cards-tiles-container > .default-content-wrapper > ul > li {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border: 1px solid #dfdfdf;
+  border-radius: 3px;
+  padding: 0;
+}
+
+main > .cards-tiles-container > .default-content-wrapper > ul > li h3 {
+  margin: 0 0 16px;
+  padding: 20px 20px 0;
+  font-size: 22px;
+  font-weight: 400;
+}
+
+main > .cards-tiles-container > .default-content-wrapper > ul > li h3 a {
+  color: #333;
+  text-decoration: none;
+}
+
+main > .cards-tiles-container > .default-content-wrapper > ul > li h3 a::after {
+  content: ' \2192';
+  color: var(--brand-green);
+  font-weight: 600;
+}
+
+main > .cards-tiles-container > .default-content-wrapper > ul > li p {
+  margin: 0 0 16px;
+  padding: 0 20px;
+  font-size: 16px;
+  color: #333;
+}
+
+/* CTA footer: pushed to bottom, divider above */
+main > .cards-tiles-container > .default-content-wrapper > ul > li p:last-child {
+  margin: auto 0 0;
+  padding: 15px 20px 12px;
+  border-top: 1px solid #dfdfdf;
+}
+
+main > .cards-tiles-container > .default-content-wrapper > ul > li p a {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--brand-green);
+  text-decoration: none;
+  font-weight: 400;
+}
+
+main > .cards-tiles-container > .default-content-wrapper > ul > li p a::after {
+  content: '\203A';
+  color: var(--brand-green);
+  font-weight: 600;
+}
+
+main > .cards-tiles-container > .default-content-wrapper > ul > li p a picture {
+  display: none;
+}
+
+/* "View more" expand control, inside the grey box below the cards */
+main > .cards-tiles-container > .default-content-wrapper > p.location-finder-more {
+  display: block;
+  margin: 0;
+  padding: 0 30px 30px;
+  background-color: #f5f5f5;
+  text-align: center;
+}
+
+main > .cards-tiles-container > .default-content-wrapper > p.location-finder-more label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #333;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+main > .cards-tiles-container > .default-content-wrapper > p.location-finder-more label::before {
+  content: 'View more';
+}
+
+main > .cards-tiles-container > .default-content-wrapper > p.location-finder-more label::after {
+  content: '\2304';
+  font-size: 18px;
+  line-height: 1;
+}
+
+/* when expanded: hide the View-more control entirely (all cards shown) */
+main > .cards-tiles-container > .default-content-wrapper > input.location-finder-more-toggle:checked ~ p.location-finder-more {
+  display: none;
+}
+
+@media (width >= 600px) {
+  main > .cards-tiles-container > .default-content-wrapper > ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (width >= 900px) {
+  main > .cards-tiles-container > .default-content-wrapper > ul {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .cards-tiles > ul {
   list-style: none;
-  margin: 0;
+  margin: 24px 0 0;
   padding: 0;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
+  gap: 24px;
 }
 
 .cards-tiles > ul > li {
-  background-color: #fff;
+  position: relative;
+  background-color: transparent;
   border-radius: 8px;
-  overflow: visible;
-  display: flex;
-  flex-direction: column;
-  padding: 16px 16px 24px;
+  overflow: hidden;
+  display: block;
+  padding: 0;
+}
+
+@media (width >= 900px) {
+  .cards-tiles > ul {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 .cards-tiles .cards-tiles-card-image {
@@ -55,43 +288,49 @@ main > .cards-tiles-container > .hero-saga-wrapper {
 
 .cards-tiles .cards-tiles-card-image img {
   width: 100%;
+  aspect-ratio: 11 / 5;
   object-fit: cover;
+  object-position: center top;
   display: block;
-  border-radius: 8px;
 }
 
+/* green caption bar overlaid on the bottom of each tile image */
 .cards-tiles .cards-tiles-card-body {
-  padding: 8px 0 0;
-  display: flex;
-  flex-direction: column;
-  flex: 1;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--brand-green);
+  padding: 7px 16px;
 }
 
 .cards-tiles .cards-tiles-card-body p {
-  margin: 0 0 24px;
-  color: #232323;
-  font-size: 16px;
-  line-height: 20px;
+  margin: 0;
 }
 
-.cards-tiles .cards-tiles-card-body p:last-child {
-  margin-top: auto;
-  margin-bottom: 0;
+.cards-tiles .cards-tiles-card-body a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 600;
+  text-decoration: none;
 }
 
-.cards-tiles .cards-tiles-card-body strong {
-  display: block;
-  color: #1e3282;
-  font-size: 21px;
-  font-weight: 900;
-  margin: 5px 0 8px;
-  line-height: 1.25;
-  text-transform: uppercase;
-}
-
-/* Hide CTA link text - original tiles have no visible link */
-.cards-tiles .cards-tiles-card-body p:last-child:has(a) {
-  display: none;
+.cards-tiles .cards-tiles-card-body a::after {
+  content: '\2192';
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  font-size: 13px;
+  line-height: 1;
 }
 
 @media (width >= 600px) {
@@ -109,3 +348,5 @@ main > .cards-tiles-container > .hero-saga-wrapper {
     grid-template-columns: repeat(4, 1fr);
   }
 }
+
+/* stylelint-enable no-descending-specificity */

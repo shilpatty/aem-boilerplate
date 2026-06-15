@@ -1,17 +1,14 @@
 export default function decorate(block) {
   [...block.children].forEach((row) => {
-    // decorate accordion item label
     const label = row.children[0];
-    const summary = document.createElement('summary');
-    summary.className = 'accordion-item-label';
-    summary.append(...label.childNodes);
-    // decorate accordion item body
-    const body = row.children[1];
-    body.className = 'accordion-item-body';
-    // decorate accordion item
-    const details = document.createElement('details');
-    details.className = 'accordion-item';
-    details.append(summary, body);
-    row.replaceWith(details);
+
+    if (label) {
+      label.addEventListener('click', () => {
+        const isOpen = row.classList.contains('open');
+        // Close all other items in same accordion
+        [...block.children].forEach((r) => r.classList.remove('open'));
+        if (!isOpen) row.classList.add('open');
+      });
+    }
   });
 }

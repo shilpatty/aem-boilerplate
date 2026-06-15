@@ -545,11 +545,11 @@ function buildStaticNewsletterForm(block) {
         <button type="submit">Subscribe</button>
       </div>
     </div>
-    <p class="form-newsletter-disclaimer">By providing your details you will receive emails with related content and offers from Saga. You can unsubscribe at any time.</p>
+    <p class="form-newsletter-disclaimer">By providing your details you will receive emails with related content and offers from Nuffield Health. You can unsubscribe at any time.</p>
   `;
   const privacyP = document.createElement('p');
   privacyP.className = 'form-newsletter-privacy';
-  privacyP.innerHTML = 'For information about how we use your personal information, please view our <a href="https://www.saga.co.uk/privacy-policy">Privacy Policy</a>';
+  privacyP.innerHTML = 'For information about how we use your personal information, please view our <a href="/privacy">Privacy Policy</a>';
 
   block.textContent = '';
   block.append(headerDiv, form, privacyP);

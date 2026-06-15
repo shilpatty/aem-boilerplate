@@ -1,0 +1,65 @@
+{
+  "differences": {
+    "block-size": {
+      "property": "block-size",
+      "original": "480.969px",
+      "migrated": "428.203px"
+    },
+    "column-gap": {
+      "property": "column-gap",
+      "original": "16px",
+      "migrated": "normal"
+    },
+    "display": {
+      "property": "display",
+      "original": "grid",
+      "migrated": "block"
+    },
+    "grid-template-columns": {
+      "property": "grid-template-columns",
+      "original": "368px 368px 368px",
+      "migrated": "none"
+    },
+    "grid-template-rows": {
+      "property": "grid-template-rows",
+      "original": "480.969px",
+      "migrated": "none"
+    },
+    "height": {
+      "property": "height",
+      "original": "480.969px",
+      "migrated": "428.203px"
+    },
+    "inline-size": {
+      "property": "inline-size",
+      "original": "1136px",
+      "migrated": "1168px"
+    },
+    "list-style-type": {
+      "property": "list-style-type",
+      "original": "none",
+      "migrated": "disc"
+    },
+    "perspective-origin": {
+      "property": "perspective-origin",
+      "original": "568px 240.484px",
+      "migrated": "584px 214.094px"
+    },
+    "row-gap": {
+      "property": "row-gap",
+      "original": "16px",
+      "migrated": "normal"
+    },
+    "transform-origin": {
+      "property": "transform-origin",
+      "original": "568px 240.484px",
+      "migrated": "584px 214.102px"
+    },
+    "width": {
+      "property": "width",
+      "original": "1136px",
+      "migrated": "1168px"
+    }
+  },
+  "total_changes": 12
+}

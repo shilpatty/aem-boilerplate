@@ -1,0 +1,55 @@
+{
+  "differences": {
+    "block-size": {
+      "property": "block-size",
+      "original": "207px",
+      "migrated": "213px"
+    },
+    "height": {
+      "property": "height",
+      "original": "207px",
+      "migrated": "213px"
+    },
+    "inline-size": {
+      "property": "inline-size",
+      "original": "368px",
+      "migrated": "378.672px"
+    },
+    "min-block-size": {
+      "property": "min-block-size",
+      "original": "0px",
+      "migrated": "auto"
+    },
+    "min-height": {
+      "property": "min-height",
+      "original": "0px",
+      "migrated": "auto"
+    },
+    "min-inline-size": {
+      "property": "min-inline-size",
+      "original": "0px",
+      "migrated": "auto"
+    },
+    "min-width": {
+      "property": "min-width",
+      "original": "0px",
+      "migrated": "auto"
+    },
+    "perspective-origin": {
+      "property": "perspective-origin",
+      "original": "184px 103.5px",
+      "migrated": "189.328px 106.5px"
+    },
+    "transform-origin": {
+      "property": "transform-origin",
+      "original": "184px 103.5px",
+      "migrated": "189.336px 106.5px"
+    },
+    "width": {
+      "property": "width",
+      "original": "368px",
+      "migrated": "378.672px"
+    }
+  },
+  "total_changes": 10
+}

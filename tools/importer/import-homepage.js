@@ -2,56 +2,76 @@
 /* global WebImporter */
 
 // PARSER IMPORTS
-import heroSagaParser from './parsers/hero-saga.js';
-import cardsCampaignParser from './parsers/cards-campaign.js';
+import heroBannerParser from './parsers/hero-banner.js';
+import cardsFeaturesParser from './parsers/cards-features.js';
+import cardsServicesParser from './parsers/cards-services.js';
 import cardsTilesParser from './parsers/cards-tiles.js';
-import cardsArticlesParser from './parsers/cards-articles.js';
-import columnsTrustParser from './parsers/columns-trust.js';
-import formParser from './parsers/form.js';
 
 // TRANSFORMER IMPORTS
-import sagaCleanupTransformer from './transformers/saga-cleanup.js';
-import sagaSectionsTransformer from './transformers/saga-sections.js';
+import cleanupTransformer from './transformers/nuffield-cleanup.js';
+import sectionsTransformer from './transformers/nuffield-sections.js';
 
 // PARSER REGISTRY
 const parsers = {
-  'hero-saga': heroSagaParser,
-  'cards-campaign': cardsCampaignParser,
+  'hero-banner': heroBannerParser,
+  'cards-features': cardsFeaturesParser,
+  'cards-services': cardsServicesParser,
   'cards-tiles': cardsTilesParser,
-  'cards-articles': cardsArticlesParser,
-  'columns-trust': columnsTrustParser,
-  'form': formParser,
 };
 
-// PAGE TEMPLATE CONFIGURATION
+// PAGE TEMPLATE CONFIGURATION - Embedded from page-templates.json
 const PAGE_TEMPLATE = {
   name: 'homepage',
-  description: 'Saga homepage with hero banner, product categories, promotions, and brand messaging',
-  urls: ['https://www.saga.co.uk/'],
+  description: 'Nuffield Health homepage with hero banner, service navigation, promotional content, and brand messaging',
+  urls: [
+    'https://www.nuffieldhealth.com/',
+  ],
   blocks: [
-    { name: 'hero-saga', instances: ['.hero-banner', '.promotional-banner'] },
-    { name: 'cards-campaign', instances: ['main > .container > .campaign-pods'] },
-    { name: 'cards-tiles', instances: ['.new-bu-container'] },
-    { name: 'cards-articles', instances: ['.mag-article-feed'] },
-    { name: 'columns-trust', instances: ['.trust-panel'] },
-    { name: 'form', instances: ['.form-subscribe'] },
+    {
+      name: 'hero-banner',
+      instances: ['.hero-location-finder'],
+    },
+    {
+      name: 'cards-features',
+      instances: ['#more-than-just-a-gym .grid--3'],
+    },
+    {
+      name: 'cards-services',
+      instances: ['#gyms .grid--2', '#hospitals .grid--2'],
+    },
+    {
+      name: 'cards-tiles',
+      instances: ['#more-from-nuffield .grid--4'],
+    },
   ],
   sections: [
-    { id: 'section-1', name: 'Hero Banner', selector: '.hero-banner', style: null, blocks: ['hero-saga'], defaultContent: [] },
-    { id: 'section-2', name: 'Campaign Pods Top', selector: 'main > .container:first-of-type', style: null, blocks: ['cards-campaign'], defaultContent: [] },
-    { id: 'section-3', name: 'Business Unit Tiles', selector: '.nav-tiles', style: null, blocks: ['cards-tiles'], defaultContent: [] },
-    { id: 'section-4', name: 'Promotional Banner', selector: ['.container:has(.promotional-banner)', '.promotional-banner'], style: null, blocks: ['hero-saga'], defaultContent: [] },
-    { id: 'section-5', name: 'Campaign Pods Bottom', selector: 'main > .container:nth-of-type(4)', style: null, blocks: ['cards-campaign'], defaultContent: [] },
-    { id: 'section-6', name: 'Magazine Article Feed', selector: '.mag-article-feed', style: null, blocks: ['cards-articles'], defaultContent: [] },
-    { id: 'section-7', name: 'Trust Panel', selector: '.trust-panel', style: 'dark', blocks: ['columns-trust'], defaultContent: [] },
-    { id: 'section-8', name: 'Newsletter Signup', selector: '.form-subscribe', style: 'light-blue', blocks: ['form'], defaultContent: [] },
+    {
+      id: 'hero', name: 'Hero', selector: '.hero-location-finder', style: null,
+      blocks: ['hero-banner'], defaultContent: [],
+    },
+    {
+      id: 'more-than-just-a-gym', name: 'Welcome to Nuffield Health', selector: '#more-than-just-a-gym', style: null,
+      blocks: ['cards-features'], defaultContent: ['#more-than-just-a-gym .rich-text h2', '#more-than-just-a-gym .rich-text p'],
+    },
+    {
+      id: 'gyms', name: 'Fitness and Wellbeing Clubs', selector: '#gyms', style: null,
+      blocks: ['cards-services'], defaultContent: ['#gyms .rich-text'],
+    },
+    {
+      id: 'hospitals', name: 'Hospitals', selector: '#hospitals', style: null,
+      blocks: ['cards-services'], defaultContent: ['#hospitals .rich-text'],
+    },
+    {
+      id: 'more-from-nuffield', name: 'More from Nuffield Health', selector: '#more-from-nuffield', style: null,
+      blocks: ['cards-tiles'], defaultContent: ['#more-from-nuffield .rich-text h2'],
+    },
   ],
 };
 
 // TRANSFORMER REGISTRY
 const transformers = [
-  sagaCleanupTransformer,
-  ...(PAGE_TEMPLATE.sections && PAGE_TEMPLATE.sections.length > 1 ? [sagaSectionsTransformer] : []),
+  cleanupTransformer,
+  ...(PAGE_TEMPLATE.sections && PAGE_TEMPLATE.sections.length > 1 ? [sectionsTransformer] : []),
 ];
 
 /**
@@ -69,36 +89,45 @@ function executeTransformers(hookName, element, payload) {
 }
 
 /**
- * Find all blocks on the page based on template configuration
+ * Find all blocks on the page based on the embedded template configuration
  */
 function findBlocksOnPage(document, template) {
   const pageBlocks = [];
   template.blocks.forEach((blockDef) => {
     blockDef.instances.forEach((selector) => {
       const elements = document.querySelectorAll(selector);
+      if (elements.length === 0) {
+        console.warn(`Block "${blockDef.name}" selector not found: ${selector}`);
+      }
       elements.forEach((element) => {
         pageBlocks.push({
           name: blockDef.name,
           selector,
           element,
+          section: blockDef.section || null,
         });
       });
     });
   });
+  console.log(`Found ${pageBlocks.length} block instances on page`);
   return pageBlocks;
 }
 
-// EXPORT DEFAULT CONFIGURATION
 export default {
   transform: (payload) => {
-    const { document, url, params } = payload;
+    const {
+      document, url, html, params,
+    } = payload;
+
     const main = document.body;
 
-    // 1. Execute beforeTransform transformers
+    // 1. beforeTransform cleanup
     executeTransformers('beforeTransform', main, payload);
 
-    // 2. Find and parse blocks
+    // 2. Find blocks on page
     const pageBlocks = findBlocksOnPage(document, PAGE_TEMPLATE);
+
+    // 3. Parse each block
     pageBlocks.forEach((block) => {
       const parser = parsers[block.name];
       if (parser) {
@@ -107,22 +136,24 @@ export default {
         } catch (e) {
           console.error(`Failed to parse ${block.name} (${block.selector}):`, e);
         }
+      } else {
+        console.warn(`No parser found for block: ${block.name}`);
       }
     });
 
-    // 3. Execute afterTransform transformers (cleanup + section breaks)
+    // 4. afterTransform cleanup + section breaks/metadata
     executeTransformers('afterTransform', main, payload);
 
-    // 4. Apply WebImporter built-in rules
+    // 5. WebImporter built-in rules
     const hr = document.createElement('hr');
     main.appendChild(hr);
     WebImporter.rules.createMetadata(main, document);
     WebImporter.rules.transformBackgroundImages(main, document);
     WebImporter.rules.adjustImageUrls(main, url, params.originalURL);
 
-    // 5. Generate sanitized path
+    // 6. Generate sanitized path
     const path = WebImporter.FileUtils.sanitizePath(
-      new URL(params.originalURL).pathname.replace(/\/$/, '').replace(/\.html$/, '') || '/index'
+      new URL(params.originalURL).pathname.replace(/\/$/, '').replace(/\.html$/, '') || '/index',
     );
 
     return [{

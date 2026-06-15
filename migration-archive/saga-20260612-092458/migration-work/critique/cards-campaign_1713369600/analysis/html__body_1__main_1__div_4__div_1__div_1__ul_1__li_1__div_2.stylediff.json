@@ -1,0 +1,75 @@
+{
+  "differences": {
+    "block-size": {
+      "property": "block-size",
+      "original": "273.969px",
+      "migrated": "261.859px"
+    },
+    "height": {
+      "property": "height",
+      "original": "273.969px",
+      "migrated": "261.859px"
+    },
+    "inline-size": {
+      "property": "inline-size",
+      "original": "368px",
+      "migrated": "378.672px"
+    },
+    "padding-block-end": {
+      "property": "padding-block-end",
+      "original": "20px",
+      "migrated": "32px"
+    },
+    "padding-block-start": {
+      "property": "padding-block-start",
+      "original": "20px",
+      "migrated": "0px"
+    },
+    "padding-bottom": {
+      "property": "padding-bottom",
+      "original": "20px",
+      "migrated": "32px"
+    },
+    "padding-inline-end": {
+      "property": "padding-inline-end",
+      "original": "20px",
+      "migrated": "24px"
+    },
+    "padding-inline-start": {
+      "property": "padding-inline-start",
+      "original": "20px",
+      "migrated": "24px"
+    },
+    "padding-left": {
+      "property": "padding-left",
+      "original": "20px",
+      "migrated": "24px"
+    },
+    "padding-right": {
+      "property": "padding-right",
+      "original": "20px",
+      "migrated": "24px"
+    },
+    "padding-top": {
+      "property": "padding-top",
+      "original": "20px",
+      "migrated": "0px"
+    },
+    "perspective-origin": {
+      "property": "perspective-origin",
+      "original": "184px 136.984px",
+      "migrated": "189.328px 130.922px"
+    },
+    "transform-origin": {
+      "property": "transform-origin",
+      "original": "184px 136.984px",
+      "migrated": "189.336px 130.93px"
+    },
+    "width": {
+      "property": "width",
+      "original": "368px",
+      "migrated": "378.672px"
+    }
+  },
+  "total_changes": 14
+}

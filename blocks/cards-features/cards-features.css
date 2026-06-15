@@ -1,0 +1,93 @@
+.cards-features > ul {
+  list-style: none;
+  margin: 0;
+  padding: 24px 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+
+/* thin grey divider below the welcome service-cards section */
+main > .cards-features-container > .cards-features-wrapper {
+  border-bottom: 1px solid #dfdfdf;
+  padding-bottom: 60px;
+}
+
+.cards-features > ul > li {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 20px;
+  text-align: left;
+  border: none;
+  background: none;
+}
+
+.cards-features .cards-features-card-image {
+  flex: 0 0 60px;
+  margin: 0;
+  line-height: 0;
+}
+
+.cards-features .cards-features-card-image img {
+  width: 60px;
+  height: 60px;
+  border-radius: 0;
+  background: none;
+  padding: 0;
+  object-fit: contain;
+}
+
+.cards-features .cards-features-card-body {
+  margin: 0;
+}
+
+.cards-features .cards-features-card-body p {
+  margin: 0 0 4px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--text-color);
+}
+
+.cards-features .cards-features-card-body p strong {
+  font-weight: 700;
+}
+
+.cards-features .cards-features-card-body p.button-wrapper {
+  margin: 4px 0 0;
+}
+
+.cards-features .cards-features-card-body a,
+.cards-features .cards-features-card-body a.button,
+.cards-features .cards-features-card-body a.button.primary {
+  display: inline-block;
+  margin: 4px 0 0;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: none;
+  color: var(--brand-green);
+  font-size: 18px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.cards-features .cards-features-card-body a::after {
+  content: '\203A';
+  margin-left: 8px;
+  font-weight: 700;
+  color: var(--brand-green-bright);
+}
+
+.cards-features .cards-features-card-body a:hover,
+.cards-features .cards-features-card-body a.button.primary:hover {
+  background: none;
+  color: var(--brand-green-dark);
+  text-decoration: underline;
+}
+
+@media (width >= 900px) {
+  .cards-features > ul {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

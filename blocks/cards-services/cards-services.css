@@ -1,0 +1,105 @@
+.cards-services > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+}
+
+/* space below the section intro (heading + paragraph) before the cards */
+main > .cards-services-container > .default-content-wrapper:first-child {
+  margin-bottom: 32px;
+}
+
+/* space below the card blocks before the promo banner / CTA */
+main > .cards-services-container > .cards-services-wrapper {
+  margin-bottom: 40px;
+}
+
+/* space between the two stacked card blocks in a section */
+main > .cards-services-container > .cards-services-wrapper + .cards-services-wrapper {
+  margin-top: 40px;
+}
+
+/* thin grey divider below the cards-services section (Fitness, Hospitals) */
+main > .cards-services-container {
+  padding-top: 40px;
+  padding-bottom: 0;
+}
+
+main > .cards-services-container::after {
+  content: '';
+  display: block;
+  max-width: 1200px;
+  margin: 60px auto 0;
+  border-bottom: 1px solid #dfdfdf;
+}
+
+.cards-services > ul > li {
+  border: none;
+  background: none;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+.cards-services .cards-services-card-image {
+  flex: 0 0 100px;
+  line-height: 0;
+  margin: 0;
+  position: relative;
+}
+
+.cards-services .cards-services-card-image p,
+.cards-services .cards-services-card-image picture,
+.cards-services > ul > li img {
+  position: relative;
+  z-index: 1;
+}
+
+.cards-services .cards-services-card-image p {
+  margin: 0;
+  line-height: 0;
+}
+
+.cards-services > ul > li img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  border-radius: 0;
+}
+
+.cards-services .cards-services-card-body {
+  margin: 0;
+  flex: 1;
+}
+
+.cards-services .cards-services-card-body p {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.4;
+  color: var(--text-color);
+}
+
+.cards-services .cards-services-card-body strong {
+  font-weight: 400;
+}
+
+.cards-services .cards-services-card-body a {
+  color: var(--text-color);
+  text-decoration: underline;
+  font-weight: 400;
+}
+
+.cards-services .cards-services-card-body a:hover {
+  text-decoration: underline;
+}
+
+@media (width >= 900px) {
+  .cards-services > ul {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px 60px;
+  }
+}

@@ -73,15 +73,15 @@
           }
         },
         {
-          "title": "Hero Saga",
-          "id": "hero-saga",
+          "title": "Hero Banner",
+          "id": "hero-banner",
           "plugins": {
             "xwalk": {
               "page": {
                 "resourceType": "core/franklin/components/block/v1/block",
                 "template": {
-                  "name": "Hero Saga",
-                  "model": "hero-saga"
+                  "name": "Hero Banner",
+                  "model": "hero-banner"
                 }
               }
             }

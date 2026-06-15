@@ -127,8 +127,9 @@ export default async function decorate(block) {
   while (fragment.firstElementChild) nav.append(fragment.firstElementChild);
 
   const classes = ['brand', 'sections', 'tools'];
+  const sections = [...nav.children].filter((child) => child.tagName === 'DIV');
   classes.forEach((c, i) => {
-    const section = nav.children[i];
+    const section = sections[i];
     if (section) section.classList.add(`nav-${c}`);
   });
 
@@ -137,6 +138,21 @@ export default async function decorate(block) {
   if (brandLink) {
     brandLink.className = '';
     brandLink.closest('.button-container').className = '';
+  }
+
+  // build the search form in the tools area (form controls live in JS)
+  const navTools = nav.querySelector('.nav-tools');
+  if (navTools) {
+    const search = document.createElement('form');
+    search.className = 'nav-search';
+    search.setAttribute('role', 'search');
+    search.action = '/search';
+    search.innerHTML = `<input type="search" name="q" aria-label="Search"
+        placeholder="What would you like to do today?">
+      <button type="submit" aria-label="Search">
+        <span class="nav-search-icon"></span>
+      </button>`;
+    navTools.prepend(search);
   }
 
   const navSections = nav.querySelector('.nav-sections');

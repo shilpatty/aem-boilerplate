@@ -1,0 +1,135 @@
+{
+  "differences": {
+    "background-color": {
+      "property": "background-color",
+      "original": "rgb(251, 177, 117)",
+      "migrated": "rgba(0, 0, 0, 0)"
+    },
+    "block-size": {
+      "property": "block-size",
+      "original": "480.969px",
+      "migrated": "428.203px"
+    },
+    "border-bottom-left-radius": {
+      "property": "border-bottom-left-radius",
+      "original": "8px",
+      "migrated": "0px"
+    },
+    "border-bottom-right-radius": {
+      "property": "border-bottom-right-radius",
+      "original": "8px",
+      "migrated": "0px"
+    },
+    "border-end-end-radius": {
+      "property": "border-end-end-radius",
+      "original": "8px",
+      "migrated": "0px"
+    },
+    "border-end-start-radius": {
+      "property": "border-end-start-radius",
+      "original": "8px",
+      "migrated": "0px"
+    },
+    "border-start-end-radius": {
+      "property": "border-start-end-radius",
+      "original": "8px",
+      "migrated": "0px"
+    },
+    "border-start-start-radius": {
+      "property": "border-start-start-radius",
+      "original": "8px",
+      "migrated": "0px"
+    },
+    "border-top-left-radius": {
+      "property": "border-top-left-radius",
+      "original": "8px",
+      "migrated": "0px"
+    },
+    "border-top-right-radius": {
+      "property": "border-top-right-radius",
+      "original": "8px",
+      "migrated": "0px"
+    },
+    "display": {
+      "property": "display",
+      "original": "flex",
+      "migrated": "block"
+    },
+    "flex-direction": {
+      "property": "flex-direction",
+      "original": "column",
+      "migrated": "row"
+    },
+    "height": {
+      "property": "height",
+      "original": "480.969px",
+      "migrated": "428.203px"
+    },
+    "inline-size": {
+      "property": "inline-size",
+      "original": "368px",
+      "migrated": "1168px"
+    },
+    "list-style-type": {
+      "property": "list-style-type",
+      "original": "none",
+      "migrated": "disc"
+    },
+    "min-block-size": {
+      "property": "min-block-size",
+      "original": "auto",
+      "migrated": "0px"
+    },
+    "min-height": {
+      "property": "min-height",
+      "original": "auto",
+      "migrated": "0px"
+    },
+    "min-inline-size": {
+      "property": "min-inline-size",
+      "original": "auto",
+      "migrated": "0px"
+    },
+    "min-width": {
+      "property": "min-width",
+      "original": "auto",
+      "migrated": "0px"
+    },
+    "overflow-block": {
+      "property": "overflow-block",
+      "original": "hidden",
+      "migrated": "visible"
+    },
+    "overflow-inline": {
+      "property": "overflow-inline",
+      "original": "hidden",
+      "migrated": "visible"
+    },
+    "overflow-x": {
+      "property": "overflow-x",
+      "original": "hidden",
+      "migrated": "visible"
+    },
+    "overflow-y": {
+      "property": "overflow-y",
+      "original": "hidden",
+      "migrated": "visible"
+    },
+    "perspective-origin": {
+      "property": "perspective-origin",
+      "original": "184px 240.484px",
+      "migrated": "584px 214.094px"
+    },
+    "transform-origin": {
+      "property": "transform-origin",
+      "original": "184px 240.484px",
+      "migrated": "584px 214.102px"
+    },
+    "width": {
+      "property": "width",
+      "original": "368px",
+      "migrated": "1168px"
+    }
+  },
+  "total_changes": 26
+}

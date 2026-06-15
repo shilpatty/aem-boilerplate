@@ -1,0 +1,157 @@
+{
+  "url": "https://www.saga.co.uk/car-insurance",
+  "sections": [
+    {
+      "id": "section-1",
+      "name": "Hero Banner",
+      "style": null,
+      "selector": ".hero.hero--large",
+      "sequences": [
+        "Full-width background image of a man by his car, with an overlay containing uppercase 'CAR INSURANCE' heading with champagne accent bar, two CTA buttons ('Get a quote' and 'Retrieve a quote'), and two award logo badges (Which? Best Buy, Defaqto) positioned bottom-right"
+      ]
+    },
+    {
+      "id": "section-2",
+      "name": "Important Notice and Introduction",
+      "style": null,
+      "selector": [".alert.alert--large.alert--white", "#anchor_Carinsurance"],
+      "sequences": [
+        "Alert box with bell icon: heading 'Important information about Saga Car Insurance' and body text about Ageas partnership change",
+        "Heading 'Find the best car insurance for you' followed by introductory paragraph about car insurance"
+      ]
+    },
+    {
+      "id": "section-3",
+      "name": "New and Existing Customer CTA",
+      "style": null,
+      "selector": ".content-double",
+      "sequences": [
+        "Two side-by-side cards: left card 'New to Saga?' with description and two buttons (Get a quote, Retrieve a quote); right card 'Already a customer?' with description and two buttons (Manage my policy, Renew now)"
+      ]
+    },
+    {
+      "id": "section-4",
+      "name": "Which Accreditation Callout",
+      "style": null,
+      "selector": ".accreditation-callout:first-of-type",
+      "sequences": [
+        "Award badge image (Which Best Buy) alongside heading 'Saga Car Insurance named a Which Best Buy' and descriptive paragraph"
+      ]
+    },
+    {
+      "id": "section-5",
+      "name": "Coverage Details and Features",
+      "style": null,
+      "selector": [".rich-text", ".content-group.content-group--lg"],
+      "sequences": [
+        "Heading 'What does car insurance cover?' followed by explanatory paragraphs about coverage levels and tailored guides",
+        "Heading 'Why choose our car insurance' with description, followed by a 3-column grid of 6 feature items, each with an SVG icon, bold title, and description paragraph"
+      ]
+    },
+    {
+      "id": "section-6",
+      "name": "Provider Information Alert",
+      "style": null,
+      "selector": ".alert:has(.alert__title:contains('Who provides'))",
+      "sequences": [
+        "Alert box: heading 'Who provides Saga Car Insurance?' with text about Ageas arrangement"
+      ]
+    },
+    {
+      "id": "section-7",
+      "name": "Compare Cover Table",
+      "style": null,
+      "selector": ["#anchor_Comparecover", ".table.table--comparison"],
+      "sequences": [
+        "Heading 'Compare car insurance from Saga'",
+        "3-column comparison table (Saga Standard, Saga Select, Saga Plus with '2-year fixed price' badge). 9 rows comparing features with tick icons, dash icons, or text values",
+        "'Get a quote' CTA button below table"
+      ]
+    },
+    {
+      "id": "section-8",
+      "name": "Product Feature Panels",
+      "style": null,
+      "selector": ".content-panel.content-panel--alt",
+      "sequences": [
+        "Two side-by-side content panels: (1) image + '2-year fixed price car insurance' heading with champagne accent + description + link; (2) EV charger image + 'Electric car insurance' heading with green accent + description + link"
+      ]
+    },
+    {
+      "id": "section-9",
+      "name": "What is Car Insurance Accordion",
+      "style": null,
+      "selector": "#anchor_Whatiscarinsurance",
+      "sequences": [
+        "Marble texture divider image",
+        "Accordion with header 'What is car insurance?' and intro text, followed by 4 expandable items about car insurance basics"
+      ]
+    },
+    {
+      "id": "section-10",
+      "name": "Help Links",
+      "style": null,
+      "selector": ".group-icon-button",
+      "sequences": [
+        "Heading 'What can we help with?' followed by a grid of 6 icon-with-label link buttons: Existing customers, Contact us, Make a claim, Breakdown cover, Policy books, FAQs"
+      ]
+    },
+    {
+      "id": "section-11",
+      "name": "Customer Reviews",
+      "style": null,
+      "selector": "#anchor_Reviews",
+      "sequences": [
+        "Heading with quote marks icon, carousel of 3 customer testimonial cards with name and quote, prev/next navigation, plus embedded Trustpilot widget"
+      ]
+    },
+    {
+      "id": "section-12",
+      "name": "Defaqto Accreditation Callout",
+      "style": null,
+      "selector": ".accreditation-callout:last-of-type",
+      "sequences": [
+        "Award badge image (Defaqto 5 Star) alongside heading 'Defaqto 5 Star rated car insurance' and descriptive paragraph"
+      ]
+    },
+    {
+      "id": "section-13",
+      "name": "Car Insurance FAQs",
+      "style": null,
+      "selector": "#anchor_FAQs",
+      "sequences": [
+        "Accordion with header 'Car insurance FAQs' and intro text, 4 expandable FAQ items, plus 'See all FAQs' button"
+      ]
+    },
+    {
+      "id": "section-14",
+      "name": "Bottom CTA Banner",
+      "style": "champagne-accent",
+      "selector": ".content-single.content-single__accent",
+      "sequences": [
+        "Centered heading 'Get a quote for Saga Car Insurance today' with two CTA buttons on a champagne-accented background"
+      ]
+    },
+    {
+      "id": "section-15",
+      "name": "More from Saga Cards",
+      "style": null,
+      "selector": ".card-carousel",
+      "sequences": [
+        "Heading 'More from Saga' with blue accent and description, followed by a horizontal card carousel with 7 cards each having image, category badge label, linked title, and description"
+      ]
+    }
+  ],
+  "blockInventory": {
+    "local": [
+      "hero-saga", "hero-product", "hero",
+      "cards-campaign", "cards-tiles", "cards-articles", "cards", "cards-testimonial",
+      "columns", "columns-trust",
+      "accordion-faq",
+      "form", "fragment"
+    ],
+    "blockCollection": [
+      "hero", "cards", "columns", "accordion", "tabs", "carousel", "quote", "table"
+    ]
+  }
+}

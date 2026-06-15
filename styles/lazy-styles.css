@@ -1,11 +1,6 @@
 /* add global styles that can be loaded post LCP here */
 
-/* Hide duplicate nav-tiles text content that appears outside the cards-tiles block */
-.cards-tiles-container > .default-content-wrapper {
-  display: none;
-}
-
-/* Saga section styles (from section-metadata) */
+/* Section styles (from section-metadata) */
 main > .section.dark {
   background-color: #1a3768;
   color: #fff;
@@ -361,7 +356,7 @@ main > .section:first-child:has(+ .section.hero-product-container) a:hover {
   text-decoration: underline;
 }
 
-/* Section heading with accent bar (e.g. "More from Saga insurance") */
+/* Section heading with accent bar (e.g. "section heading") */
 main > .section.cards-articles-container > .default-content-wrapper:first-child h3 {
   color: #1e3282;
   font-size: 28px;
@@ -379,7 +374,7 @@ main > .section.cards-articles-container > .default-content-wrapper:first-child 
   margin: 0 0 24px;
 }
 
-/* Saga motorhome info card section */
+/* Motorhome info card section */
 /* stylelint-disable-next-line no-descending-specificity */
 main > .section:not([class*="-container"]) > .default-content-wrapper:has(h3 + p + p + p + ul) {
   background-color: #f5f5f5;
@@ -442,4 +437,34 @@ main > .section:not([class*="-container"]) > .default-content-wrapper:has(h3 + p
   .section.yellow-cta h2 {
     font-size: 44px;
   }
+}
+
+/* ===== Legacy page styles ===== */
+
+/* Champagne accent section (CTA banner) */
+/* stylelint-disable-next-line no-descending-specificity */
+main > .section.champagne-accent {
+  background-color: #fef5eb;
+  margin: 40px 0;
+  padding: 48px 16px;
+  text-align: center;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+main > .section.champagne-accent h3 {
+  color: #1e3282;
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0 0 20px;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+main > .section.champagne-accent a.button {
+  display: inline-block;
+  padding: 12px 32px;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 16px;
+  text-decoration: none;
+  margin: 4px 8px;
 }

@@ -1,0 +1,35 @@
+{
+  "differences": {
+    "block-size": {
+      "property": "block-size",
+      "original": "480.969px",
+      "migrated": "428.203px"
+    },
+    "height": {
+      "property": "height",
+      "original": "480.969px",
+      "migrated": "428.203px"
+    },
+    "inline-size": {
+      "property": "inline-size",
+      "original": "1136px",
+      "migrated": "1168px"
+    },
+    "perspective-origin": {
+      "property": "perspective-origin",
+      "original": "568px 240.484px",
+      "migrated": "584px 214.094px"
+    },
+    "transform-origin": {
+      "property": "transform-origin",
+      "original": "568px 240.484px",
+      "migrated": "584px 214.102px"
+    },
+    "width": {
+      "property": "width",
+      "original": "1136px",
+      "migrated": "1168px"
+    }
+  },
+  "total_changes": 6
+}

@@ -1,0 +1,28 @@
+{
+  "block_name": "cards-campaign",
+  "block_selector": ".cards-campaign",
+  "original_selector": "xpath=/html/body[1]/main[1]/div[4]/div[1]",
+  "original_url": "https://www.saga.co.uk/",
+  "migrated_url": "http://localhost:3000/content/index",
+  "migrated_path": "/content/index",
+  "status": {
+    "original_collection_complete": true,
+    "migrated_collection_complete": true,
+    "analysis_complete": true
+  },
+  "collection_metadata": {
+    "original": {
+      "elements": 13,
+      "timestamp": "2026-04-17T09:16:11.934Z"
+    },
+    "migrated": {
+      "elements": 11,
+      "timestamp": "2026-04-17T09:32:00.000Z"
+    }
+  },
+  "analysis": {
+    "similarity": 0.5599999999999999,
+    "grade": "Poor",
+    "verified_differences": 5
+  }
+}

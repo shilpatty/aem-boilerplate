@@ -1,0 +1,30 @@
+{
+  "webpage_section": {
+    "section_id": "html__body_1__main_1__div_4__div_1__div_1__ul_1__li_1",
+    "section_description": "First card list item containing an image section and a text content section with heading, description, and CTA button"
+  },
+  "difference_1": {
+    "element_id": "/html/body[1]/main[1]/div[4]/div[1]/div[1]/ul[1]/li[1]",
+    "element_description": "First card container (full card with image and text)",
+    "computed_style_change": "display: flex vs block; flex-direction: column vs row; border-radius: 8px vs 0px; background-color: rgb(251,177,117) vs transparent; width: 368px vs 1168px",
+    "difference": "The original card is displayed as a vertical flex column (image on top, text below) with 8px rounded corners and an orange background, at 368px width. The migrated version is a block element spanning the full container width (1168px) with no border radius and transparent background. The card layout is fundamentally different - original shows a single vertical card, migrated shows a horizontal 3-card row layout.",
+    "dissimilarity_score": 0.7,
+    "noticeability_score": 0.9
+  },
+  "difference_2": {
+    "element_id": "/html/body[1]/main[1]/div[4]/div[1]/div[1]/ul[1]/li[1]/div[2]",
+    "element_description": "Card text content area with heading and CTA button",
+    "computed_style_change": "padding-top: 20px vs 0px; padding-bottom: 20px vs 32px",
+    "difference": "The text content area in the original has uniform 20px padding with orange background. In the migrated version the top padding is missing (0px) causing text to sit flush against the image area, and the bottom padding is larger (32px).",
+    "dissimilarity_score": 0.4,
+    "noticeability_score": 0.5
+  },
+  "difference_3": {
+    "element_id": "/html/body[1]/main[1]/div[4]/div[1]/div[1]/ul[1]/li[1]/div[1]/p[1]/img[1]",
+    "element_description": "Card image showing magazine covers (original) vs man on beach (migrated)",
+    "computed_style_change": "object-fit: cover vs fill",
+    "difference": "The original image shows Saga magazine covers while the migrated shows a different photo entirely. The object-fit changed from 'cover' to 'fill'.",
+    "dissimilarity_score": 0.8,
+    "noticeability_score": 0.9
+  }
+}

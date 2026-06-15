@@ -1,3 +1,4 @@
+/* eslint-disable */
 var CustomImportScript = (() => {
   var __defProp = Object.defineProperty;
   var __defProps = Object.defineProperties;
@@ -40,243 +41,308 @@ var CustomImportScript = (() => {
     default: () => import_homepage_default
   });
 
-  // tools/importer/parsers/hero-saga.js
+  // tools/importer/parsers/hero-banner.js
   function parse(element, { document }) {
-    const bgImage = element.querySelector(".hero-banner__img, .promotional-banner__img");
-    const heading = element.querySelector(".hero-banner__title, .promotional-banner__title, h1, h2");
-    const body = element.querySelector(".hero-banner__body, .promotional-banner__body");
-    const cta = element.querySelector(".hero-banner__cta, .promotional-banner__cta, a.button");
     const cells = [];
-    if (bgImage) {
-      cells.push([bgImage]);
+    let img = element.querySelector(
+      ".hero-location-finder__inner > img, .hero-location-finder__inner img, picture img, picture, img"
+    );
+    if (!img) {
+      const inner = element.querySelector(".hero-location-finder__inner");
+      let bgUrl = "";
+      if (inner && inner.style && inner.style.backgroundImage) {
+        const m = inner.style.backgroundImage.match(/url\((['"]?)(.*?)\1\)/);
+        if (m) bgUrl = m[2];
+      }
+      if (!bgUrl) {
+        const styleEl = element.querySelector("style");
+        if (styleEl) {
+          const m = styleEl.textContent.match(/background-image:\s*url\((['"]?)(.*?)\1\)/);
+          if (m) bgUrl = m[2];
+        }
+      }
+      if (bgUrl) {
+        img = document.createElement("img");
+        img.setAttribute("src", bgUrl);
+      }
     }
-    const contentWrapper = document.createElement("div");
-    if (heading) contentWrapper.append(heading);
-    if (body) contentWrapper.append(body);
-    if (cta) contentWrapper.append(cta);
-    if (contentWrapper.childNodes.length > 0) {
-      cells.push([contentWrapper]);
+    const heading = element.querySelector(
+      ".hero-location-finder__title, h1, h2"
+    );
+    const desc = element.querySelector(".hero-location-finder__desc");
+    const descParagraphs = desc ? Array.from(desc.children) : Array.from(element.querySelectorAll(".hero-location-finder__copy > p, :scope p"));
+    const imageCell = document.createElement("div");
+    if (img) {
+      const imageFrag = document.createDocumentFragment();
+      imageFrag.appendChild(document.createComment(" field:image "));
+      imageFrag.appendChild(img);
+      imageCell.appendChild(imageFrag);
     }
-    const block = WebImporter.Blocks.createBlock(document, { name: "hero-saga", cells });
+    cells.push([imageCell]);
+    const textCell = document.createElement("div");
+    const textFrag = document.createDocumentFragment();
+    textFrag.appendChild(document.createComment(" field:text "));
+    if (heading) textFrag.appendChild(heading);
+    descParagraphs.forEach((node) => textFrag.appendChild(node));
+    textCell.appendChild(textFrag);
+    cells.push([textCell]);
+    const block = WebImporter.Blocks.createBlock(document, { name: "hero-banner", cells });
     element.replaceWith(block);
   }
 
-  // tools/importer/parsers/cards-campaign.js
+  // tools/importer/parsers/cards-features.js
   function parse2(element, { document }) {
-    const cards = element.querySelectorAll(".card.campaign-pod");
     const cells = [];
-    cards.forEach((card) => {
-      const image = card.querySelector(".card__image img");
-      const title = card.querySelector(".card__title");
-      const body = card.querySelector(".card__body");
-      const cta = card.querySelector("a.expanded-link, a.card__cta");
+    let cardCells = Array.from(element.querySelectorAll(":scope > .grid__cell"));
+    if (cardCells.length === 0) {
+      cardCells = Array.from(element.querySelectorAll(".grid__cell"));
+    }
+    if (cardCells.length === 0 && element.classList.contains("grid__cell")) {
+      cardCells = [element];
+    }
+    cardCells.forEach((cell) => {
+      const img = cell.querySelector(".image-gallery__hero img, .image-gallery img, img");
+      const bodyNodes = [];
+      const serviceCardContent = cell.querySelector(".service-card__content");
+      if (serviceCardContent) {
+        Array.from(serviceCardContent.children).forEach((child) => bodyNodes.push(child));
+      } else {
+        Array.from(cell.querySelectorAll(":scope > p")).forEach((p) => bodyNodes.push(p));
+      }
       const imageCell = document.createElement("div");
-      if (image) imageCell.append(image);
+      if (img) {
+        const imageFrag = document.createDocumentFragment();
+        imageFrag.appendChild(document.createComment(" field:image "));
+        imageFrag.appendChild(img);
+        imageCell.appendChild(imageFrag);
+      }
       const textCell = document.createElement("div");
-      if (title) {
-        const heading = document.createElement("strong");
-        heading.textContent = title.textContent.trim();
-        textCell.append(heading);
+      if (bodyNodes.length) {
+        const textFrag = document.createDocumentFragment();
+        textFrag.appendChild(document.createComment(" field:text "));
+        bodyNodes.forEach((node) => textFrag.appendChild(node));
+        textCell.appendChild(textFrag);
       }
-      if (body) {
-        const p = document.createElement("p");
-        p.textContent = body.textContent.trim();
-        textCell.append(p);
-      }
-      if (cta) textCell.append(cta);
       cells.push([imageCell, textCell]);
     });
-    const block = WebImporter.Blocks.createBlock(document, { name: "cards-campaign", cells });
+    const block = WebImporter.Blocks.createBlock(document, { name: "cards-features", cells });
+    element.replaceWith(block);
+  }
+
+  // tools/importer/parsers/cards-services.js
+  function parse3(element, { document }) {
+    const cells = [];
+    let cardCells = Array.from(element.querySelectorAll(":scope > .grid__cell"));
+    if (cardCells.length === 0) {
+      cardCells = Array.from(element.querySelectorAll(".grid__cell"));
+    }
+    if (cardCells.length === 0 && element.classList.contains("grid__cell")) {
+      cardCells = [element];
+    }
+    cardCells.forEach((cell) => {
+      const img = cell.querySelector(".image-gallery__hero img, .image-gallery img, img");
+      const textParagraphs = Array.from(cell.querySelectorAll(":scope > p"));
+      const imageCell = document.createElement("div");
+      if (img) {
+        const imageFrag = document.createDocumentFragment();
+        imageFrag.appendChild(document.createComment(" field:image "));
+        imageFrag.appendChild(img);
+        imageCell.appendChild(imageFrag);
+      }
+      const textCell = document.createElement("div");
+      if (textParagraphs.length) {
+        const textFrag = document.createDocumentFragment();
+        textFrag.appendChild(document.createComment(" field:text "));
+        textParagraphs.forEach((p) => textFrag.appendChild(p));
+        textCell.appendChild(textFrag);
+      }
+      cells.push([imageCell, textCell]);
+    });
+    const block = WebImporter.Blocks.createBlock(document, { name: "cards-services", cells });
     element.replaceWith(block);
   }
 
   // tools/importer/parsers/cards-tiles.js
-  function parse3(element, { document }) {
-    const tiles = element.querySelectorAll(".bu-tile");
+  function parse4(element, { document }) {
+    const galleries = Array.from(element.querySelectorAll(".image-gallery"));
     const cells = [];
-    tiles.forEach((tile) => {
-      const image = tile.querySelector(".bu-image img");
-      const title = tile.querySelector(".bu-text h3");
-      const body = tile.querySelector(".bu-text p");
-      const cta = tile.querySelector(".bu-cta a");
-      const imageCell = document.createElement("div");
-      if (image) imageCell.append(image);
-      const textCell = document.createElement("div");
-      if (title) {
-        const heading = document.createElement("strong");
-        heading.textContent = title.textContent.trim();
-        textCell.append(heading);
+    galleries.forEach((gallery) => {
+      const hero = gallery.querySelector(".image-gallery__hero") || gallery;
+      const img = hero.querySelector("img");
+      const imageLink = img ? img.closest("a") : null;
+      const imageCell = [];
+      imageCell.push(document.createComment(" field:image "));
+      if (img) {
+        imageCell.push(imageLink || img);
       }
-      if (body) {
-        const p = document.createElement("p");
-        p.textContent = body.textContent.trim();
-        textCell.append(p);
+      const tileRoot = gallery.parentElement || gallery;
+      const textNodes = Array.from(tileRoot.children).filter(
+        (child) => child !== gallery && !child.classList.contains("image-gallery") && (child.tagName === "P" || child.tagName === "H2" || child.tagName === "H3" || child.tagName === "H4" || /heading|title/i.test(child.className || ""))
+      );
+      const textCell = [];
+      if (textNodes.length) {
+        textCell.push(document.createComment(" field:text "));
+        textCell.push(...textNodes);
       }
-      if (cta) textCell.append(cta);
       cells.push([imageCell, textCell]);
     });
     const block = WebImporter.Blocks.createBlock(document, { name: "cards-tiles", cells });
     element.replaceWith(block);
   }
 
-  // tools/importer/parsers/cards-articles.js
-  function parse4(element, { document }) {
-    const cards = element.querySelectorAll(".mag-article-feed__card");
-    const cells = [];
-    cards.forEach((card) => {
-      const image = card.querySelector(".card__image img");
-      const titleLink = card.querySelector(".card__title a.expanded-link");
-      const imageCell = document.createElement("div");
-      if (image) imageCell.append(image);
-      const textCell = document.createElement("div");
-      if (titleLink) {
-        const heading = document.createElement("strong");
-        const link = document.createElement("a");
-        link.href = titleLink.href;
-        link.textContent = titleLink.textContent.trim();
-        heading.append(link);
-        textCell.append(heading);
-      }
-      cells.push([imageCell, textCell]);
-    });
-    const block = WebImporter.Blocks.createBlock(document, { name: "cards-articles", cells });
-    element.replaceWith(block);
-  }
-
-  // tools/importer/parsers/columns-trust.js
-  function parse5(element, { document }) {
-    const title = element.querySelector(".trust-panel__title, h2");
-    const description = element.querySelector(".trust-panel__description");
-    const logoItems = element.querySelectorAll(".trust-panel__logo-item");
-    const textCol = document.createElement("div");
-    if (title) textCol.append(title);
-    if (description) textCol.append(description);
-    const logosCol = document.createElement("div");
-    logoItems.forEach((item) => {
-      const img = item.querySelector(".trust-panel__logo, img");
-      if (img) {
-        const link = document.createElement("a");
-        link.href = item.href || "#";
-        link.append(img);
-        logosCol.append(link);
-      }
-    });
-    const cells = [[textCol, logosCol]];
-    const block = WebImporter.Blocks.createBlock(document, { name: "columns-trust", cells });
-    element.replaceWith(block);
-  }
-
-  // tools/importer/parsers/form.js
-  function parse6(element, { document }) {
-    var _a;
-    const title = element.querySelector(".form-subscribe__title, h3, legend");
-    const description = (_a = element.querySelector(".form-subscribe__content")) == null ? void 0 : _a.previousElementSibling;
-    const contentCell = document.createElement("div");
-    if (title) {
-      const heading = document.createElement("h3");
-      heading.textContent = title.textContent.trim();
-      contentCell.append(heading);
-    }
-    const descP = element.querySelector("fieldset > .container--sm > p");
-    if (descP) {
-      const p = document.createElement("p");
-      p.textContent = descP.textContent.trim();
-      contentCell.append(p);
-    }
-    const cells = [[contentCell]];
-    const block = WebImporter.Blocks.createBlock(document, { name: "form", cells });
-    element.replaceWith(block);
-  }
-
-  // tools/importer/transformers/saga-cleanup.js
-  var H = { before: "beforeTransform", after: "afterTransform" };
+  // tools/importer/transformers/nuffield-cleanup.js
+  var TransformHook = {
+    beforeTransform: "beforeTransform",
+    afterTransform: "afterTransform"
+  };
   function transform(hookName, element, payload) {
-    if (hookName === H.before) {
+    if (hookName === TransformHook.beforeTransform) {
       WebImporter.DOMUtils.remove(element, [
-        "#onetrust-consent-sdk",
-        "#onetrust-banner-sdk",
-        '[class*="onetrust"]',
-        "#CybotCookiebotDialog",
-        ".sticky-newsletter",
-        "#adl_params"
+        "#ccc",
+        // cookie-consent container (includes #ccc-overlay, #ccc-notify, .ccc-*)
+        "#ccc-overlay",
+        "#ccc-notify",
+        ".browser-notification"
+        // legacy IE upgrade prompt (homepage line 1035: #action_insert_*)
       ]);
     }
-    if (hookName === H.after) {
+    if (hookName === TransformHook.afterTransform) {
       WebImporter.DOMUtils.remove(element, [
-        "nav.meganav",
-        "footer.megafoot",
+        ".nav",
+        "#nav",
+        ".nav__skiplink",
+        "#focus-on-nav",
+        ".footer",
+        "#sprite",
+        ".pac-container"
+      ]);
+      WebImporter.DOMUtils.remove(element, [
+        'iframe[id^="destination_publishing_iframe"]',
+        ".aamIframeLoaded",
+        "#AWIN_CDT",
+        'img[src*="lantern.roeye.com"]',
+        "iframe.doctify-widget",
+        ".g-recaptcha",
+        ".g-recaptcha-bubble-arrow",
+        'iframe[src*="recaptcha"]'
+      ]);
+      WebImporter.DOMUtils.remove(element, [
+        'iframe[src="about:blank"]',
         "noscript",
-        "iframe",
         "link"
       ]);
-      element.querySelectorAll("*").forEach((el) => {
-        el.removeAttribute("data-di-res-id");
-        el.removeAttribute("data-di-rand");
-        el.removeAttribute("onclick");
-      });
     }
   }
 
-  // tools/importer/transformers/saga-sections.js
+  // tools/importer/transformers/nuffield-sections.js
+  var TransformHook2 = {
+    beforeTransform: "beforeTransform",
+    afterTransform: "afterTransform"
+  };
   function transform2(hookName, element, payload) {
-    if (hookName === "afterTransform") {
-      const { document } = payload;
-      const template = payload.template;
-      if (!template || !template.sections || template.sections.length < 2) return;
-      const sections = [...template.sections].reverse();
-      sections.forEach((section) => {
-        let sectionEl = null;
-        const selectors = Array.isArray(section.selector) ? section.selector : [section.selector];
-        for (const sel of selectors) {
-          sectionEl = element.querySelector(sel);
-          if (sectionEl) break;
+    if (hookName === TransformHook2.afterTransform) {
+      const template = payload && payload.template;
+      const sections = template && template.sections;
+      if (!sections || sections.length < 2) {
+        return;
+      }
+      const doc = element.ownerDocument;
+      for (let i = sections.length - 1; i >= 0; i -= 1) {
+        const section = sections[i];
+        if (!section || !section.selector) {
+          continue;
         }
-        if (!sectionEl) return;
+        const sectionEl = element.querySelector(section.selector);
+        if (!sectionEl) {
+          continue;
+        }
         if (section.style) {
-          const sectionMetadata = WebImporter.Blocks.createBlock(document, {
+          const metaBlock = WebImporter.Blocks.createBlock(doc, {
             name: "Section Metadata",
             cells: { style: section.style }
           });
-          sectionEl.after(sectionMetadata);
+          sectionEl.after(metaBlock);
         }
-        if (section.id !== "section-1") {
-          const hr = document.createElement("hr");
+        if (i > 0) {
+          const hr = doc.createElement("hr");
           sectionEl.before(hr);
         }
-      });
+      }
     }
   }
 
   // tools/importer/import-homepage.js
   var parsers = {
-    "hero-saga": parse,
-    "cards-campaign": parse2,
-    "cards-tiles": parse3,
-    "cards-articles": parse4,
-    "columns-trust": parse5,
-    "form": parse6
+    "hero-banner": parse,
+    "cards-features": parse2,
+    "cards-services": parse3,
+    "cards-tiles": parse4
   };
   var PAGE_TEMPLATE = {
     name: "homepage",
-    description: "Saga homepage with hero banner, product categories, promotions, and brand messaging",
-    urls: ["https://www.saga.co.uk/"],
+    description: "Nuffield Health homepage with hero banner, service navigation, promotional content, and brand messaging",
+    urls: [
+      "https://www.nuffieldhealth.com/"
+    ],
     blocks: [
-      { name: "hero-saga", instances: [".hero-banner", ".promotional-banner"] },
-      { name: "cards-campaign", instances: ["main > .container > .campaign-pods"] },
-      { name: "cards-tiles", instances: [".new-bu-container"] },
-      { name: "cards-articles", instances: [".mag-article-feed"] },
-      { name: "columns-trust", instances: [".trust-panel"] },
-      { name: "form", instances: [".form-subscribe"] }
+      {
+        name: "hero-banner",
+        instances: [".hero-location-finder"]
+      },
+      {
+        name: "cards-features",
+        instances: ["#more-than-just-a-gym .grid--3"]
+      },
+      {
+        name: "cards-services",
+        instances: ["#gyms .grid--2", "#hospitals .grid--2"]
+      },
+      {
+        name: "cards-tiles",
+        instances: ["#more-from-nuffield .grid--4"]
+      }
     ],
     sections: [
-      { id: "section-1", name: "Hero Banner", selector: ".hero-banner", style: null, blocks: ["hero-saga"], defaultContent: [] },
-      { id: "section-2", name: "Campaign Pods Top", selector: "main > .container:first-of-type", style: null, blocks: ["cards-campaign"], defaultContent: [] },
-      { id: "section-3", name: "Business Unit Tiles", selector: ".nav-tiles", style: null, blocks: ["cards-tiles"], defaultContent: [] },
-      { id: "section-4", name: "Promotional Banner", selector: [".container:has(.promotional-banner)", ".promotional-banner"], style: null, blocks: ["hero-saga"], defaultContent: [] },
-      { id: "section-5", name: "Campaign Pods Bottom", selector: "main > .container:nth-of-type(4)", style: null, blocks: ["cards-campaign"], defaultContent: [] },
-      { id: "section-6", name: "Magazine Article Feed", selector: ".mag-article-feed", style: null, blocks: ["cards-articles"], defaultContent: [] },
-      { id: "section-7", name: "Trust Panel", selector: ".trust-panel", style: "dark", blocks: ["columns-trust"], defaultContent: [] },
-      { id: "section-8", name: "Newsletter Signup", selector: ".form-subscribe", style: "light-blue", blocks: ["form"], defaultContent: [] }
+      {
+        id: "hero",
+        name: "Hero",
+        selector: ".hero-location-finder",
+        style: null,
+        blocks: ["hero-banner"],
+        defaultContent: []
+      },
+      {
+        id: "more-than-just-a-gym",
+        name: "Welcome to Nuffield Health",
+        selector: "#more-than-just-a-gym",
+        style: null,
+        blocks: ["cards-features"],
+        defaultContent: ["#more-than-just-a-gym .rich-text h2", "#more-than-just-a-gym .rich-text p"]
+      },
+      {
+        id: "gyms",
+        name: "Fitness and Wellbeing Clubs",
+        selector: "#gyms",
+        style: null,
+        blocks: ["cards-services"],
+        defaultContent: ["#gyms .rich-text"]
+      },
+      {
+        id: "hospitals",
+        name: "Hospitals",
+        selector: "#hospitals",
+        style: null,
+        blocks: ["cards-services"],
+        defaultContent: ["#hospitals .rich-text"]
+      },
+      {
+        id: "more-from-nuffield",
+        name: "More from Nuffield Health",
+        selector: "#more-from-nuffield",
+        style: null,
+        blocks: ["cards-tiles"],
+        defaultContent: ["#more-from-nuffield .rich-text h2"]
+      }
     ]
   };
   var transformers = [
@@ -298,20 +364,30 @@ var CustomImportScript = (() => {
     template.blocks.forEach((blockDef) => {
       blockDef.instances.forEach((selector) => {
         const elements = document.querySelectorAll(selector);
+        if (elements.length === 0) {
+          console.warn(`Block "${blockDef.name}" selector not found: ${selector}`);
+        }
         elements.forEach((element) => {
           pageBlocks.push({
             name: blockDef.name,
             selector,
-            element
+            element,
+            section: blockDef.section || null
           });
         });
       });
     });
+    console.log(`Found ${pageBlocks.length} block instances on page`);
     return pageBlocks;
   }
   var import_homepage_default = {
     transform: (payload) => {
-      const { document, url, params } = payload;
+      const {
+        document,
+        url,
+        html,
+        params
+      } = payload;
       const main = document.body;
       executeTransformers("beforeTransform", main, payload);
       const pageBlocks = findBlocksOnPage(document, PAGE_TEMPLATE);
@@ -323,6 +399,8 @@ var CustomImportScript = (() => {
           } catch (e) {
             console.error(`Failed to parse ${block.name} (${block.selector}):`, e);
           }
+        } else {
+          console.warn(`No parser found for block: ${block.name}`);
         }
       });
       executeTransformers("afterTransform", main, payload);

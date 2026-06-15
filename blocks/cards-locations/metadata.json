@@ -1,0 +1,41 @@
+{
+  "variantName": "cards-locations",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-06-12T09:35:34.990Z",
+  "sourceContext": {
+    "originUrl": "https://www.nuffieldhealth.com/hospitals?ref=main-nav",
+    "originPage": "hospitals listing page",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "compact",
+    "purpose": "location-listing",
+    "imagePattern": "noimg"
+  },
+  "contentPattern": {
+    "structure": "named location link per card (optionally with region grouping)",
+    "buttonCount": 0,
+    "imageCount": 0
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "hospital / clinic / branch location listings",
+      "store locator or 'find your nearest' link grids",
+      "region-grouped link directories"
+    ],
+    "notSuitableFor": [
+      "image-led feature card grids",
+      "article previews with images",
+      "cards requiring CTA buttons or descriptive body copy"
+    ]
+  },
+  "usage": {
+    "pagesUsing": [
+      "/hospitals"
+    ],
+    "reuseCount": 1,
+    "lastUsed": "2026-06-12T09:35:34.990Z"
+  }
+}

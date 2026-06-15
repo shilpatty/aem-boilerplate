@@ -1,0 +1,85 @@
+{
+  "differences": {
+    "block-size": {
+      "property": "block-size",
+      "original": "480.969px",
+      "migrated": "428.203px"
+    },
+    "height": {
+      "property": "height",
+      "original": "480.969px",
+      "migrated": "428.203px"
+    },
+    "inline-size": {
+      "property": "inline-size",
+      "original": "1200px",
+      "migrated": "1168px"
+    },
+    "margin-inline-end": {
+      "property": "margin-inline-end",
+      "original": "350px",
+      "migrated": "0px"
+    },
+    "margin-inline-start": {
+      "property": "margin-inline-start",
+      "original": "350px",
+      "migrated": "0px"
+    },
+    "margin-left": {
+      "property": "margin-left",
+      "original": "350px",
+      "migrated": "0px"
+    },
+    "margin-right": {
+      "property": "margin-right",
+      "original": "350px",
+      "migrated": "0px"
+    },
+    "max-inline-size": {
+      "property": "max-inline-size",
+      "original": "1200px",
+      "migrated": "none"
+    },
+    "max-width": {
+      "property": "max-width",
+      "original": "1200px",
+      "migrated": "none"
+    },
+    "padding-inline-end": {
+      "property": "padding-inline-end",
+      "original": "32px",
+      "migrated": "0px"
+    },
+    "padding-inline-start": {
+      "property": "padding-inline-start",
+      "original": "32px",
+      "migrated": "0px"
+    },
+    "padding-left": {
+      "property": "padding-left",
+      "original": "32px",
+      "migrated": "0px"
+    },
+    "padding-right": {
+      "property": "padding-right",
+      "original": "32px",
+      "migrated": "0px"
+    },
+    "perspective-origin": {
+      "property": "perspective-origin",
+      "original": "600px 240.484px",
+      "migrated": "584px 214.094px"
+    },
+    "transform-origin": {
+      "property": "transform-origin",
+      "original": "600px 240.484px",
+      "migrated": "584px 214.102px"
+    },
+    "width": {
+      "property": "width",
+      "original": "1200px",
+      "migrated": "1168px"
+    }
+  },
+  "total_changes": 16
+}

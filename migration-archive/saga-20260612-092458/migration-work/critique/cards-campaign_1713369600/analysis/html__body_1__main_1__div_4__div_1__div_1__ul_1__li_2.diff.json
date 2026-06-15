@@ -1,0 +1,30 @@
+{
+  "webpage_section": {
+    "section_id": "html__body_1__main_1__div_4__div_1__div_1__ul_1__li_2",
+    "section_description": "Second card list item containing an image section and text content section with heading, description, and CTA button"
+  },
+  "difference_1": {
+    "element_id": "/html/body[1]/main[1]/div[4]/div[1]/div[1]/ul[1]/li[2]",
+    "element_description": "Second card container (full card with image and text)",
+    "computed_style_change": "display: flex vs block; flex-direction: column vs row; border-radius: 8px vs 0px; width: 368px vs 1168px",
+    "difference": "The original second card is a vertical flex column at 368px width with 8px rounded corners and light blue background. The migrated version is a block element at full container width with no border radius. The layout changed from a single vertical card to a horizontal multi-card row.",
+    "dissimilarity_score": 0.7,
+    "noticeability_score": 0.9
+  },
+  "difference_2": {
+    "element_id": "/html/body[1]/main[1]/div[4]/div[1]/div[1]/ul[1]/li[2]/div[2]",
+    "element_description": "Card text content area with heading and CTA button",
+    "computed_style_change": "padding-top: 20px vs 0px; padding-bottom: 20px vs 32px",
+    "difference": "The text content area padding differs: original has uniform 20px padding, migrated has 0px top padding and 32px bottom padding.",
+    "dissimilarity_score": 0.4,
+    "noticeability_score": 0.5
+  },
+  "difference_3": {
+    "element_id": "/html/body[1]/main[1]/div[4]/div[1]/div[1]/ul[1]/li[2]/div[1]/p[1]/img[1]",
+    "element_description": "Card image showing wine bottles (original) vs man on beach (migrated)",
+    "computed_style_change": "object-fit: cover vs fill",
+    "difference": "The original image shows wine bottles while the migrated shows a different photo. The object-fit changed from 'cover' to 'fill'.",
+    "dissimilarity_score": 0.8,
+    "noticeability_score": 0.9
+  }
+}
