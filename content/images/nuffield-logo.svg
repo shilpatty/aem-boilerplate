@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+    <title>Nuffield Health (404)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+      document.documentElement.className = document.documentElement.className.replace('no-js', '');
+    </script>
+    <link rel="stylesheet" type="text/css" href="/assets/dist/css/application.css">
+  </head>
+  <body>
+
+    <div id="nav" class="nav" role="navigation">
+    <div class="row row--green row--inverse row--no-padding row--overflow">
+      <div class="layout-container nav__layout-container">
+        <div class="layout layout--12">
+          <div class="layout__column">
+            <div class="nav__upper">
+              <a href="/" class="nav__logo-wrapper">
+                <!--[if lt IE 9]><img class="nav__logo" src="/assets/dist/images/logo_inverse.png" alt="Nuffield Health" /><![endif]--><!--[if gte IE 9]><!-->
+                <span class="nav__logo">
+                  <img class="nav__logo-text" src="/assets/dist/images/logo_inverse.svg" alt="Nuffield Health" />
+                </span><!--<![endif]-->
+              </a>
+              <ul class="nav__list"></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <div class="row">
+      <div class="layout-container">
+        <div class="layout layout--0-8-0">
+          <div class="layout__column layout__column--1">
+
+            <div class="page-header">
+              <h1>Page not found</h1>
+              <div class="page-header__lead">
+                <p>You may have entered the address incorrectly or followed an old link. We&#x27;ve recently refreshed our website so we may have moved the page ourselves, sorry about that.</p>
+              </div>
+            </div>
+
+            <p>Try again from <a href="https://www.nuffieldhealth.com/" title="Link: https://www.nuffieldhealth.com/">www.nuffieldhealth.com</a>, or let us know about the problem via the webform below or <a href="mailto:advicecentre@nuffieldhealth.com">email us</a>.</p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>
